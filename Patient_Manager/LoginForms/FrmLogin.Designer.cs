@@ -39,6 +39,8 @@ namespace Patient_Manager
             this.LblLoginPassword = new System.Windows.Forms.Label();
             this.TxbLoginNick = new System.Windows.Forms.TextBox();
             this.TxbLoginPassword = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PtbLogin)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -47,7 +49,7 @@ namespace Patient_Manager
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.20002F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.60335F));
@@ -55,23 +57,26 @@ namespace Patient_Manager
             this.tableLayoutPanel1.Controls.Add(this.PtbLogin, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.40749F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.22482F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.34426F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.28806F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.073359F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(431, 427);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(431, 403);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // PtbLogin
             // 
+            this.PtbLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.PtbLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PtbLogin.Image = ((System.Drawing.Image)(resources.GetObject("PtbLogin.Image")));
             this.PtbLogin.Location = new System.Drawing.Point(72, 3);
             this.PtbLogin.Name = "PtbLogin";
-            this.PtbLogin.Size = new System.Drawing.Size(285, 158);
+            this.PtbLogin.Size = new System.Drawing.Size(285, 153);
             this.PtbLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PtbLogin.TabIndex = 0;
             this.PtbLogin.TabStop = false;
@@ -84,17 +89,17 @@ namespace Patient_Manager
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.39131F));
             this.tableLayoutPanel2.Controls.Add(this.BtnLoginInit, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(72, 390);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(72, 369);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(285, 34);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(285, 31);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // BtnLoginInit
             // 
-            this.BtnLoginInit.BackColor = System.Drawing.Color.White;
+            this.BtnLoginInit.BackColor = System.Drawing.Color.Honeydew;
             this.BtnLoginInit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnLoginInit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnLoginInit.FlatAppearance.BorderSize = 0;
@@ -104,7 +109,7 @@ namespace Patient_Manager
             this.BtnLoginInit.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnLoginInit.Location = new System.Drawing.Point(55, 3);
             this.BtnLoginInit.Name = "BtnLoginInit";
-            this.BtnLoginInit.Size = new System.Drawing.Size(176, 28);
+            this.BtnLoginInit.Size = new System.Drawing.Size(176, 25);
             this.BtnLoginInit.TabIndex = 0;
             this.BtnLoginInit.Text = "Login";
             this.BtnLoginInit.UseVisualStyleBackColor = false;
@@ -119,12 +124,12 @@ namespace Patient_Manager
             this.tableLayoutPanel3.Controls.Add(this.TxbLoginNick, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.TxbLoginPassword, 1, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(72, 167);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(72, 162);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(285, 217);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.28856F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.71144F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(285, 201);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // LblLoginNick
@@ -132,6 +137,7 @@ namespace Patient_Manager
             this.LblLoginNick.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblLoginNick.AutoSize = true;
             this.LblLoginNick.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LblLoginNick.ForeColor = System.Drawing.Color.White;
             this.LblLoginNick.Location = new System.Drawing.Point(94, 0);
             this.LblLoginNick.Name = "LblLoginNick";
             this.LblLoginNick.Size = new System.Drawing.Size(45, 20);
@@ -143,7 +149,8 @@ namespace Patient_Manager
             this.LblLoginPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblLoginPassword.AutoSize = true;
             this.LblLoginPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblLoginPassword.Location = new System.Drawing.Point(62, 108);
+            this.LblLoginPassword.ForeColor = System.Drawing.Color.White;
+            this.LblLoginPassword.Location = new System.Drawing.Point(62, 85);
             this.LblLoginPassword.Name = "LblLoginPassword";
             this.LblLoginPassword.Size = new System.Drawing.Size(77, 20);
             this.LblLoginPassword.TabIndex = 1;
@@ -160,20 +167,41 @@ namespace Patient_Manager
             // TxbLoginPassword
             // 
             this.TxbLoginPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxbLoginPassword.Location = new System.Drawing.Point(145, 111);
+            this.TxbLoginPassword.Location = new System.Drawing.Point(145, 88);
             this.TxbLoginPassword.Name = "TxbLoginPassword";
             this.TxbLoginPassword.Size = new System.Drawing.Size(137, 23);
             this.TxbLoginPassword.TabIndex = 3;
+            // 
+            // panel1
+            // 
+            this.panel1.AutoSize = true;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.panel1.Location = new System.Drawing.Point(363, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(65, 153);
+            this.panel1.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(63, 153);
+            this.panel2.TabIndex = 4;
             // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(431, 427);
+            this.ClientSize = new System.Drawing.Size(431, 403);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmLogin";
             this.Text = "Login";
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PtbLogin)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -193,6 +221,8 @@ namespace Patient_Manager
         private System.Windows.Forms.Label LblLoginPassword;
         private System.Windows.Forms.TextBox TxbLoginNick;
         private System.Windows.Forms.TextBox TxbLoginPassword;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 
