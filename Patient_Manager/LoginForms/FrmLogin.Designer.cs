@@ -103,8 +103,8 @@ namespace Patient_Manager
             this.BtnLoginInit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnLoginInit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnLoginInit.FlatAppearance.BorderSize = 0;
-            this.BtnLoginInit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BtnLoginInit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BtnLoginInit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Honeydew;
+            this.BtnLoginInit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.BtnLoginInit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLoginInit.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnLoginInit.Location = new System.Drawing.Point(55, 3);
@@ -113,6 +113,7 @@ namespace Patient_Manager
             this.BtnLoginInit.TabIndex = 0;
             this.BtnLoginInit.Text = "Login";
             this.BtnLoginInit.UseVisualStyleBackColor = false;
+            this.BtnLoginInit.Click += new System.EventHandler(this.BtnLoginInit_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -171,6 +172,7 @@ namespace Patient_Manager
             this.TxbLoginPassword.Name = "TxbLoginPassword";
             this.TxbLoginPassword.Size = new System.Drawing.Size(137, 23);
             this.TxbLoginPassword.TabIndex = 3;
+            this.TxbLoginPassword.UseSystemPasswordChar = true;
             // 
             // panel1
             // 
