@@ -2,6 +2,7 @@
 using Database.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Text;
 
@@ -23,6 +24,11 @@ namespace BusinessLayer
             return repository.Add(item);
         }
 
+        public bool Delete(int id)
+        {
+            return repository.Delete(id);
+        }
+
         public string CheckUser(string userName)
         {
             return repository.CheckUser(userName);
@@ -32,6 +38,11 @@ namespace BusinessLayer
         public DataUser Login(string username, string password)
         {
             return repository.Login(username, password);
+        }
+
+        public DataTable GatAll()
+        {
+            return repository.GetAll();
         }
 
 

@@ -28,6 +28,11 @@ namespace Patient_Manager.FormsHome
             Off();
         }
 
+        private void FrmHome_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Off();
+        }
+
         #endregion
 
 

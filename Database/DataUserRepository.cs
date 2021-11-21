@@ -103,6 +103,22 @@ namespace Database
             }
         }
 
+        public DataTable GetAll()
+        {
+            SqlDataAdapter query = new SqlDataAdapter("SELECT Id,Name,LastName,Mail,UserName,TypeUser FROM Users", _connection);
+
+            return LoadData(query);
+        }
+
+        public bool Delete(int id)
+        {
+            SqlCommand command = new SqlCommand("DELETE Users WHERE Id=@id",_connection);
+
+            command.Parameters.AddWithValue("@id", id);
+
+            return ExecuteDml(command);
+        }
+
         #endregion
 
         #region "Main Methods"
@@ -124,6 +140,26 @@ namespace Database
                 return false;
             }
 
+        }
+
+        private DataTable LoadData(SqlDataAdapter query)
+        {
+            try
+            {
+                DataTable data = new DataTable();
+
+                _connection.Open();
+
+                query.Fill(data);
+
+                _connection.Close();
+
+                return data;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
 
         #endregion

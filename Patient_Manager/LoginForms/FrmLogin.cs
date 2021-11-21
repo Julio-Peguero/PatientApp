@@ -44,26 +44,34 @@ namespace Patient_Manager
 
         public void Login()
         {
-           if (string.IsNullOrWhiteSpace(TxbLoginNick.Text) || string.IsNullOrWhiteSpace(TxbLoginPassword.Text))
-           {
-                MessageBox.Show("You must complete all the data", "Warning");
-           }
-           else
-           {
-                DataUser data = service.Login(TxbLoginNick.Text, TxbLoginPassword.Text);
-                if (data.UserName == TxbLoginNick.Text && data.Password == TxbLoginPassword.Text)
+            try
+            {
+                if (string.IsNullOrWhiteSpace(TxbLoginNick.Text) || string.IsNullOrWhiteSpace(TxbLoginPassword.Text))
                 {
-                    FrmLogin.Instance.Hide();
-                    FrmHome newForm = new FrmHome();
-                    newForm.Show();
-                    ClearTxb();
+                    MessageBox.Show("You must complete all the data", "Warning");
                 }
                 else
                 {
-                    MessageBox.Show("Wrong username or password", "Warning");
-                    ClearTxb();
+                    DataUser data = service.Login(TxbLoginNick.Text, TxbLoginPassword.Text);
+                    if (data.UserName == TxbLoginNick.Text && data.Password == TxbLoginPassword.Text)
+                    {
+                        FrmLogin.Instance.Hide();
+                        FrmHome newForm = new FrmHome();
+                        newForm.Show();
+                        ClearTxb();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wrong username or password", "Warning");
+                        ClearTxb();
+                    }
                 }
-           }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error has occurred", "Error");
+                ClearTxb();
+            }
         }
 
         public void ClearTxb()

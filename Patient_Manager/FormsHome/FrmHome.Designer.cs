@@ -234,7 +234,7 @@ namespace Patient_Manager.FormsHome
             // singOffToolStripMenuItem
             // 
             this.singOffToolStripMenuItem.Name = "singOffToolStripMenuItem";
-            this.singOffToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.singOffToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.singOffToolStripMenuItem.Text = "Sing Off";
             this.singOffToolStripMenuItem.Click += new System.EventHandler(this.singOffToolStripMenuItem_Click);
             // 
@@ -248,6 +248,7 @@ namespace Patient_Manager.FormsHome
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmHome";
             this.Text = "Menu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmHome_FormClosed);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
