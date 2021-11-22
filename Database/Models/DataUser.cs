@@ -21,5 +21,7 @@ namespace Database.Models
 
         public int Type { get; set; }
 
+        public string TypeUser { get; set; }
+
     }
 }

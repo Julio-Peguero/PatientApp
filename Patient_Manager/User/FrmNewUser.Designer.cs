@@ -319,6 +319,7 @@ namespace Patient_Manager.User
             this.Controls.Add(this.TblRegister);
             this.Name = "FrmNewUser";
             this.Text = "User";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmNewUser_FormClosed);
             this.Load += new System.EventHandler(this.FrmNewUser_Load);
             this.TblRegister.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PtbPatients)).EndInit();

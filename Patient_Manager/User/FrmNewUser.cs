@@ -57,6 +57,11 @@ namespace Patient_Manager.User
             }
         }
 
+        private void FrmNewUser_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Back();
+        }
+
         #endregion
 
 
@@ -165,6 +170,8 @@ namespace Patient_Manager.User
 
         public void LoadEdit()
         {
+            TxbUser.Enabled = false;
+
             if (MainRepository.Instance.UserIdex != null)
             {
                 ComboBoxItem selectItem = CxbType.SelectedItem as ComboBoxItem;
@@ -177,6 +184,11 @@ namespace Patient_Manager.User
                 TxbPassword.Text = editContact.Password;
                 TxbPasswordC.Text = editContact.Password;
                 editContact.Id = MainRepository.Instance.UserIdex.Value;
+                CxbType.SelectedIndex = CxbType.FindStringExact(editContact.TypeUser);
+            }
+            else
+            {
+                TxbUser.Enabled = true;
             }
         }
 

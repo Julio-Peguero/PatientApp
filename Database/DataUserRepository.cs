@@ -120,7 +120,7 @@ namespace Database
 
         public DataTable GetAll()
         {
-            SqlDataAdapter query = new SqlDataAdapter("SELECT Id as Code,Name,LastName,Mail,UserName,TypeUser FROM Users", _connection);
+            SqlDataAdapter query = new SqlDataAdapter("SELECT u.Id as Code,u.Name,u.LastName,u.Mail,u.UserName,ty.Name FROM Users u JOIN UserType ty on u.TypeUser = ty.Id", _connection);
 
             return LoadData(query);
         }
@@ -140,7 +140,7 @@ namespace Database
             {
                 _connection.Open();
 
-                SqlCommand command = new SqlCommand("SELECT Id,Name,LastName,Mail,UserName,TypeUser,Password FROM Users WHERE Id = @id", _connection);
+                SqlCommand command = new SqlCommand("SELECT u.Id,u.Name,u.LastName,u.Mail,u.UserName,ty.Name AS TypeUser,u.Password FROM Users u JOIN UserType ty on u.TypeUser = ty.Id WHERE U.Id = @id", _connection);
 
                 command.Parameters.AddWithValue("@id", id);
 
@@ -155,7 +155,7 @@ namespace Database
                     data.LastName = reader.IsDBNull(2) ? "" : reader.GetString(2);
                     data.Mail = reader.IsDBNull(3) ? "" : reader.GetString(3);
                     data.UserName = reader.IsDBNull(4) ? "" : reader.GetString(4);
-                    data.Type = reader.IsDBNull(5) ? 0 : reader.GetInt32(5);
+                    data.TypeUser = reader.IsDBNull(5) ? "" : reader.GetString(5);
                     data.Password = reader.IsDBNull(6) ? "" : reader.GetString(6);
                 }
 
