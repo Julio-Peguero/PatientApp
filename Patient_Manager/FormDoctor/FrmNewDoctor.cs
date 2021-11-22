@@ -48,12 +48,22 @@ namespace Patient_Manager.FormDoctor
 
         private void FrmNewDoctor_Load(object sender, EventArgs e)
         {
-
+            if (MainRepository.Instance.DoctorIndex != null)
+            {
+                LoadEdit();
+            }
         }
 
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
-            Add();
+            if (MainRepository.Instance.DoctorIndex >= 0)
+            {
+                Edit();
+            }
+            else
+            {
+                Add();
+            }
         }
 
         #endregion
@@ -79,7 +89,7 @@ namespace Patient_Manager.FormDoctor
             try
             {
                 if (string.IsNullOrWhiteSpace(TxbName.Text) || string.IsNullOrWhiteSpace(TxbLastName.Text)
-                || string.IsNullOrWhiteSpace(TxbMail.Text) || !MtbCard.MaskCompleted || !MtbPhone.MaskCompleted || PtbPhotoD == null)
+                || string.IsNullOrWhiteSpace(TxbMail.Text) || !MtbCard.MaskCompleted || !MtbPhone.MaskCompleted || PtbPhotoD.ImageLocation == null)
                 {
 
                     MessageBox.Show("You must complete all the data", "Warning");
@@ -94,15 +104,70 @@ namespace Patient_Manager.FormDoctor
                         Mail = TxbMail.Text,
                         Card = MtbCard.Text,
                         Phone = MtbPhone.Text,
-                        Photo = MainRepository.Instance.destination
                     };
 
-                    _service.Add(doctors);
+                    bool result = _service.Add(doctors);
+
+                    if (result)
+                    {
+                        SavePhoto();
+                    }
+
+                    MessageBox.Show("The user was added successfully", "Notification");
+                    ClearAll();
+                    Back();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("You must complete all the data", "Error");
+            }
+        }
+
+        public void LoadEdit()
+        {
+
+            if (MainRepository.Instance.DoctorIndex != null)
+            {
+                DataDoctor Doctor = _service.GetById(MainRepository.Instance.DoctorIndex.Value);
+                TxbName.Text = Doctor.Name;
+                TxbLastName.Text = Doctor.LastName;
+                TxbMail.Text = Doctor.Mail;
+                MtbCard.Text = Doctor.Card;
+                MtbPhone.Text = Doctor.Phone;
+                Doctor.Id = MainRepository.Instance.DoctorIndex.Value;
+                PtbPhotoD.ImageLocation = Doctor.Photo;
+            }
+        }
+
+        public void Edit()
+        {
+            try
+            {
+
+                if (string.IsNullOrWhiteSpace(TxbName.Text) || string.IsNullOrWhiteSpace(TxbLastName.Text)
+                || string.IsNullOrWhiteSpace(TxbMail.Text) || !MtbCard.MaskCompleted || !MtbPhone.MaskCompleted || PtbPhotoD.ImageLocation == null)
+                {
+
+                    MessageBox.Show("You must complete all the data", "Warning");
+                }
+                else 
+                {
+                    DataDoctor users = new DataDoctor()
+                    {
+                        Name = TxbName.Text,
+                        LastName = TxbLastName.Text,
+                        Mail = TxbMail.Text,
+                        Phone = MtbPhone.Text,
+                        Card = MtbCard.Text,
+                        Id = MainRepository.Instance.DoctorIndex.Value
+                    };
+
+                    _service.Edit(users);
 
                     SavePhoto();
 
-                    MessageBox.Show("The user was added successfully", "Notification");
-                    //ClearAll();
+                    MessageBox.Show("User edited successfully", "Notification");
                     Back();
                 }
             }
@@ -125,17 +190,24 @@ namespace Patient_Manager.FormDoctor
             {
                 MainRepository.Instance.fileName = PhotoDialog.FileName;
 
-                PtbPhotoD.ImageLocation = MainRepository.Instance.fileName;
+                if (PhotoDialog.FileName.EndsWith(".png") || PhotoDialog.FileName.EndsWith(".jpg"))
+                {
+                    PtbPhotoD.ImageLocation = MainRepository.Instance.fileName;
+                }
+                else
+                {
+                    MessageBox.Show("You can only upload images .png or .jpg", "Error");
+                }
             }
         }
 
-        private void SavePhoto() //Ponerlo en despues de Add y Edit
+        private void SavePhoto() 
         {
             if(!string.IsNullOrWhiteSpace(MainRepository.Instance.fileName))
             {
                 int id = MainRepository.Instance.DoctorIndex != null ? (int)MainRepository.Instance.DoctorIndex.Value : _service.GetLastId();
 
-                string directory = @"Images\Doctor\" + id + "\\"; //Images/Contact/10
+                string directory = $@"Images\Doctor\{id}\";
                 CreateDirectory(directory);
 
                 string[] fileNameSplit = MainRepository.Instance.fileName.Split("\\");

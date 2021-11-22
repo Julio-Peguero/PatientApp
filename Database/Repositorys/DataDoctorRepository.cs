@@ -20,14 +20,13 @@ namespace Database
 
         public bool Add(DataDoctor item)
         {
-            SqlCommand command = new SqlCommand("INSERT INTO Doctors(Name,LastName,Mail,Phone,Card,Photo) VALUES(@name,@lastname,@mail,@phone,@card,@photo)", _connection);
+            SqlCommand command = new SqlCommand("INSERT INTO Doctors(Name,LastName,Mail,Phone,Card) VALUES(@name,@lastname,@mail,@phone,@card)", _connection);
 
             command.Parameters.AddWithValue("@name", item.Name);
             command.Parameters.AddWithValue("@lastname", item.LastName);
             command.Parameters.AddWithValue("@mail", item.Mail);
             command.Parameters.AddWithValue("@phone", item.Phone);
             command.Parameters.AddWithValue("@card", item.Card);
-            command.Parameters.AddWithValue("@photo", item.Photo);
 
             return ExecuteDml(command);
         }
@@ -44,14 +43,13 @@ namespace Database
 
         public bool Edit(DataDoctor item)
         {
-            SqlCommand command = new SqlCommand("UPDATE Doctors set Name=@name,LastName=@lastname,Mail=@mail,Phone=@phone,Card=@card,Photo=@photo WHERE Id = @id", _connection);
+            SqlCommand command = new SqlCommand("UPDATE Doctors set Name=@name,LastName=@lastname,Mail=@mail,Phone=@phone,Card=@card WHERE Id = @id", _connection);
 
             command.Parameters.AddWithValue("@name", item.Name);
             command.Parameters.AddWithValue("@lastname", item.LastName);
             command.Parameters.AddWithValue("@mail", item.Mail);
             command.Parameters.AddWithValue("@phone", item.Phone);
             command.Parameters.AddWithValue("@card", item.Card);
-            command.Parameters.AddWithValue("@photo", item.Photo);
             command.Parameters.AddWithValue("@id", item.Id);
 
             return ExecuteDml(command);
