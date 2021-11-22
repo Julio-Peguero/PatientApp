@@ -249,6 +249,7 @@ namespace Patient_Manager.FormsHome
             this.Name = "FrmHome";
             this.Text = "Menu";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmHome_FormClosed);
+            this.Load += new System.EventHandler(this.FrmHome_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

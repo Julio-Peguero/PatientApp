@@ -29,6 +29,11 @@ namespace BusinessLayer
             return repository.Delete(id);
         }
 
+        public bool Edit(DataUser item)
+        {
+            return repository.Edit(item);
+        }
+
         public string CheckUser(string userName)
         {
             return repository.CheckUser(userName);
@@ -43,6 +48,11 @@ namespace BusinessLayer
         public DataTable GatAll()
         {
             return repository.GetAll();
+        }
+
+        public DataUser GetById(int id)
+        {
+            return repository.GetById(id);
         }
 
 

@@ -16,6 +16,7 @@ namespace Patient_Manager.User
     {
         public UserService service;
 
+
         public FrmUser()
         {
             InitializeComponent();
@@ -34,6 +35,7 @@ namespace Patient_Manager.User
         private void FrmUser_Load(object sender, EventArgs e)
         {
             LoadData();
+            Boleans();
         }
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -63,7 +65,7 @@ namespace Patient_Manager.User
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            Add();
+            Edit();
         }
 
         private void DgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -109,9 +111,31 @@ namespace Patient_Manager.User
 
         private void Add()
         {
-            FrmNewUser newForm = new FrmNewUser();
-            newForm.Show();
-            this.Hide();
+
+            if (MainRepository.Instance.UserIdex != null)
+            {
+                MessageBox.Show("You must deselect the user", "Warning");
+            }
+            else
+            {
+                FrmNewUser newForm = new FrmNewUser();
+                newForm.Show();
+                this.Hide();
+            }
+        }
+
+        private void Edit()
+        {
+            if (MainRepository.Instance.UserIdex == null)
+            {
+                MessageBox.Show("You must select the user", "Warning");
+            }
+            else
+            {
+                FrmNewUser newForm = new FrmNewUser();
+                newForm.Show();
+                this.Hide();
+            }
         }
 
         private void LoadData()
@@ -125,7 +149,7 @@ namespace Patient_Manager.User
         {
             if (MainRepository.Instance.UserIdex == null)
             {
-                MessageBox.Show("You must choose a contact", "Warning");
+                MessageBox.Show("You must choose a User", "Warning");
             }
             else
             {

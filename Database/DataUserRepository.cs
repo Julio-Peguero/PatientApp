@@ -30,6 +30,21 @@ namespace Database
             return ExecuteDml(command);
         }
 
+        public bool Edit(DataUser item)
+        {
+            SqlCommand command = new SqlCommand("UPDATE Users set Name=@name,LastName=@lastname,Mail=@mail,UserName=@username,Password=@password,TypeUser=@typeuser WHERE Id = @id", _connection);
+
+            command.Parameters.AddWithValue("@name", item.Name);
+            command.Parameters.AddWithValue("@lastname", item.LastName);
+            command.Parameters.AddWithValue("@mail", item.Mail);
+            command.Parameters.AddWithValue("@username", item.UserName);
+            command.Parameters.AddWithValue("@password", item.Password);
+            command.Parameters.AddWithValue("@typeuser", item.Type);
+            command.Parameters.AddWithValue("@id", item.Id);
+
+            return ExecuteDml(command);
+        }
+
         public string CheckUser(string username)
         {
             try
@@ -105,7 +120,7 @@ namespace Database
 
         public DataTable GetAll()
         {
-            SqlDataAdapter query = new SqlDataAdapter("SELECT Id,Name,LastName,Mail,UserName,TypeUser FROM Users", _connection);
+            SqlDataAdapter query = new SqlDataAdapter("SELECT Id as Code,Name,LastName,Mail,UserName,TypeUser FROM Users", _connection);
 
             return LoadData(query);
         }
@@ -117,6 +132,44 @@ namespace Database
             command.Parameters.AddWithValue("@id", id);
 
             return ExecuteDml(command);
+        }
+
+        public DataUser GetById(int id)
+        {
+            try
+            {
+                _connection.Open();
+
+                SqlCommand command = new SqlCommand("SELECT Id,Name,LastName,Mail,UserName,TypeUser,Password FROM Users WHERE Id = @id", _connection);
+
+                command.Parameters.AddWithValue("@id", id);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                DataUser data = new DataUser();
+
+                while (reader.Read())
+                {
+                    data.Id = reader.IsDBNull(0) ? 0 : reader.GetInt32(0);
+                    data.Name = reader.IsDBNull(1) ? "" : reader.GetString(1);
+                    data.LastName = reader.IsDBNull(2) ? "" : reader.GetString(2);
+                    data.Mail = reader.IsDBNull(3) ? "" : reader.GetString(3);
+                    data.UserName = reader.IsDBNull(4) ? "" : reader.GetString(4);
+                    data.Type = reader.IsDBNull(5) ? 0 : reader.GetInt32(5);
+                    data.Password = reader.IsDBNull(6) ? "" : reader.GetString(6);
+                }
+
+                reader.Close();
+                reader.Dispose();
+
+                _connection.Close();
+
+                return data;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
 
         #endregion

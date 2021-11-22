@@ -44,7 +44,7 @@ namespace Patient_Manager.User
             this.TxbUser = new System.Windows.Forms.TextBox();
             this.TxbMail = new System.Windows.Forms.TextBox();
             this.CxbType = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxbPassword = new System.Windows.Forms.TextBox();
             this.TxbPasswordC = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.BtnBack = new System.Windows.Forms.Button();
@@ -103,7 +103,7 @@ namespace Patient_Manager.User
             this.tableLayoutPanel4.Controls.Add(this.TxbUser, 1, 3);
             this.tableLayoutPanel4.Controls.Add(this.TxbMail, 1, 2);
             this.tableLayoutPanel4.Controls.Add(this.CxbType, 1, 4);
-            this.tableLayoutPanel4.Controls.Add(this.textBox1, 1, 5);
+            this.tableLayoutPanel4.Controls.Add(this.TxbPassword, 1, 5);
             this.tableLayoutPanel4.Controls.Add(this.TxbPasswordC, 1, 6);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(74, 192);
@@ -245,13 +245,13 @@ namespace Patient_Manager.User
             this.CxbType.Size = new System.Drawing.Size(163, 23);
             this.CxbType.TabIndex = 25;
             // 
-            // textBox1
+            // TxbPassword
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(171, 203);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(163, 23);
-            this.textBox1.TabIndex = 26;
+            this.TxbPassword.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TxbPassword.Location = new System.Drawing.Point(171, 203);
+            this.TxbPassword.Name = "TxbPassword";
+            this.TxbPassword.Size = new System.Drawing.Size(163, 23);
+            this.TxbPassword.TabIndex = 26;
             // 
             // TxbPasswordC
             // 
@@ -292,6 +292,7 @@ namespace Patient_Manager.User
             this.BtnBack.TabIndex = 0;
             this.BtnBack.Text = "Back";
             this.BtnBack.UseVisualStyleBackColor = false;
+            this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // BtnConfirm
             // 
@@ -308,6 +309,7 @@ namespace Patient_Manager.User
             this.BtnConfirm.TabIndex = 1;
             this.BtnConfirm.Text = "Add";
             this.BtnConfirm.UseVisualStyleBackColor = false;
+            this.BtnConfirm.Click += new System.EventHandler(this.BtnConfirm_Click);
             // 
             // FrmNewUser
             // 
@@ -317,6 +319,7 @@ namespace Patient_Manager.User
             this.Controls.Add(this.TblRegister);
             this.Name = "FrmNewUser";
             this.Text = "User";
+            this.Load += new System.EventHandler(this.FrmNewUser_Load);
             this.TblRegister.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PtbPatients)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -343,7 +346,7 @@ namespace Patient_Manager.User
         private System.Windows.Forms.TextBox TxbUser;
         private System.Windows.Forms.TextBox TxbMail;
         private System.Windows.Forms.ComboBox CxbType;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxbPassword;
         private System.Windows.Forms.TextBox TxbPasswordC;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Button BtnBack;

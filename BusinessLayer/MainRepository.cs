@@ -11,6 +11,8 @@ namespace BusinessLayer
 
         public int? UserIdex = null;
 
+        public int UserType = 0;
+
         private MainRepository()
         {
 

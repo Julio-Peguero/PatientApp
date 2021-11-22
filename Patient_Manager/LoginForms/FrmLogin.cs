@@ -53,8 +53,10 @@ namespace Patient_Manager
                 else
                 {
                     DataUser data = service.Login(TxbLoginNick.Text, TxbLoginPassword.Text);
+
                     if (data.UserName == TxbLoginNick.Text && data.Password == TxbLoginPassword.Text)
                     {
+                        MainRepository.Instance.UserType = data.Type;
                         FrmLogin.Instance.Hide();
                         FrmHome newForm = new FrmHome();
                         newForm.Show();
