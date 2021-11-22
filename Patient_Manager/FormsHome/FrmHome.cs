@@ -1,5 +1,6 @@
 ﻿using BusinessLayer;
 using Database.Models;
+using Patient_Manager.FormDoctor;
 using Patient_Manager.User;
 using System;
 using System.Collections.Generic;
@@ -50,6 +51,11 @@ namespace Patient_Manager.FormsHome
             BtnAccess();
         }
 
+        private void BtnMedical_Click(object sender, EventArgs e)
+        {
+            Doctor();
+        }
+
         #endregion
 
 
@@ -65,6 +71,13 @@ namespace Patient_Manager.FormsHome
         {
             this.Hide();
             FrmUser newForm = new FrmUser();
+            newForm.Show();
+        }
+
+        private void Doctor()
+        {
+            this.Hide();
+            FrmDoctor newForm = new FrmDoctor();
             newForm.Show();
         }
 

@@ -123,6 +123,7 @@ namespace Patient_Manager.FormsHome
             this.BtnMedical.TabIndex = 1;
             this.BtnMedical.Text = "Medical maintenance";
             this.BtnMedical.UseVisualStyleBackColor = false;
+            this.BtnMedical.Click += new System.EventHandler(this.BtnMedical_Click);
             // 
             // BtnTestLab
             // 
