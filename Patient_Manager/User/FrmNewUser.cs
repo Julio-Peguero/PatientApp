@@ -1,5 +1,6 @@
 ﻿using BusinessLayer;
 using Database.Models;
+using EmailHandler;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,8 @@ namespace Patient_Manager.User
 
         public UserTypeService _userTypeService;
 
+        private EmailSender _emailSender;
+
         public FrmNewUser()
         {
             InitializeComponent();
@@ -28,7 +31,10 @@ namespace Patient_Manager.User
             SqlConnection connection = new SqlConnection(connectionString);
 
             service = new UserService(connection);
+
             _userTypeService = new UserTypeService(connection);
+
+            _emailSender = new EmailSender();
         }
 
 
@@ -105,6 +111,9 @@ namespace Patient_Manager.User
                     }
                     else
                     {
+                        _emailSender.SendEmail(users.Mail, "The user was added successfully",
+                            $"Your username is {users.UserName} and Password is {users.Password}");
+
                         service.Add(users);
 
                         MessageBox.Show("The user was added successfully", "Notification");

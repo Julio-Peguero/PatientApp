@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj" />
     <ProjectReference Include="..\Database\Database.csproj" />
+    <ProjectReference Include="..\EmailHandler\EmailHandler.csproj" />
   </ItemGroup>
 
   <ItemGroup>

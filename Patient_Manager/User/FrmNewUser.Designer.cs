@@ -252,6 +252,7 @@ namespace Patient_Manager.User
             this.TxbPassword.Name = "TxbPassword";
             this.TxbPassword.Size = new System.Drawing.Size(163, 23);
             this.TxbPassword.TabIndex = 26;
+            this.TxbPassword.UseSystemPasswordChar = true;
             // 
             // TxbPasswordC
             // 
@@ -260,6 +261,7 @@ namespace Patient_Manager.User
             this.TxbPasswordC.Name = "TxbPasswordC";
             this.TxbPasswordC.Size = new System.Drawing.Size(163, 23);
             this.TxbPasswordC.TabIndex = 27;
+            this.TxbPasswordC.UseSystemPasswordChar = true;
             // 
             // tableLayoutPanel5
             // 
