@@ -113,7 +113,7 @@ namespace Patient_Manager.FormDoctor
                         SavePhoto();
                     }
 
-                    MessageBox.Show("The user was added successfully", "Notification");
+                    MessageBox.Show("The doctor was added successfully", "Notification");
                     ClearAll();
                     Back();
                 }
@@ -153,7 +153,7 @@ namespace Patient_Manager.FormDoctor
                 }
                 else 
                 {
-                    DataDoctor users = new DataDoctor()
+                    DataDoctor doctor = new DataDoctor()
                     {
                         Name = TxbName.Text,
                         LastName = TxbLastName.Text,
@@ -163,11 +163,11 @@ namespace Patient_Manager.FormDoctor
                         Id = MainRepository.Instance.DoctorIndex.Value
                     };
 
-                    _service.Edit(users);
+                    _service.Edit(doctor);
 
                     SavePhoto();
 
-                    MessageBox.Show("User edited successfully", "Notification");
+                    MessageBox.Show("Doctor edited successfully", "Notification");
                     Back();
                 }
             }

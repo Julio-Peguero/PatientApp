@@ -152,6 +152,7 @@ namespace Patient_Manager.FormsHome
             this.BtnPatient.TabIndex = 3;
             this.BtnPatient.Text = "Patient maintenance";
             this.BtnPatient.UseVisualStyleBackColor = false;
+            this.BtnPatient.Click += new System.EventHandler(this.BtnPatient_Click);
             // 
             // BtnKeep
             // 

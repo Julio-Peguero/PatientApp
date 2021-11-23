@@ -27,6 +27,12 @@ namespace BusinessLayer
 
         #endregion
 
+        #region "Patient"
+
+        public int? PatientIndex = null;
+
+        #endregion
+
         private MainRepository()
         {
 
