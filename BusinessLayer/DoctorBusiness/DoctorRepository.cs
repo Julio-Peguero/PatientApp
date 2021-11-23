@@ -9,7 +9,7 @@ namespace BusinessLayer.DoctorBusiness
 
         public static DoctorRepository Instance { get; } = new DoctorRepository();
 
-        public List<Doctor> Users { get; set; } = new List<Doctor>();
+        public List<Doctor> Doctors { get; set; } = new List<Doctor>();
 
         private DoctorRepository()
         {
