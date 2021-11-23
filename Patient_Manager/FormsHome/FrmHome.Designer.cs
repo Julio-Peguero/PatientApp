@@ -138,6 +138,7 @@ namespace Patient_Manager.FormsHome
             this.BtnTestLab.TabIndex = 2;
             this.BtnTestLab.Text = "Laboratory Test maintenance";
             this.BtnTestLab.UseVisualStyleBackColor = false;
+            this.BtnTestLab.Click += new System.EventHandler(this.BtnTestLab_Click);
             // 
             // BtnPatient
             // 

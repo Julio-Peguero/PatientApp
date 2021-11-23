@@ -76,6 +76,7 @@ namespace Patient_Manager.FormLab
             this.BtnBack.TabIndex = 0;
             this.BtnBack.Text = "Back";
             this.BtnBack.UseVisualStyleBackColor = false;
+            this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // BtnConfirm
             // 
@@ -92,6 +93,7 @@ namespace Patient_Manager.FormLab
             this.BtnConfirm.TabIndex = 1;
             this.BtnConfirm.Text = "Add";
             this.BtnConfirm.UseVisualStyleBackColor = false;
+            this.BtnConfirm.Click += new System.EventHandler(this.BtnConfirm_Click);
             // 
             // tableLayoutPanel4
             // 
@@ -196,6 +198,8 @@ namespace Patient_Manager.FormLab
             this.Controls.Add(this.TblRegister);
             this.Name = "FrmNewLab";
             this.Text = "Lab";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmNewLab_FormClosed);
+            this.Load += new System.EventHandler(this.FrmNewLab_Load);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();

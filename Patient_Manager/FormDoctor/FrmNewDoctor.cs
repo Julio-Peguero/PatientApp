@@ -213,11 +213,11 @@ namespace Patient_Manager.FormDoctor
                 string[] fileNameSplit = MainRepository.Instance.fileName.Split("\\");
                 string filename = fileNameSplit[(fileNameSplit.Length - 1)];
 
-                MainRepository.Instance.destination = directory + filename;
+                MainRepository.Instance.destinationD = directory + filename;
 
-                File.Copy(MainRepository.Instance.fileName, MainRepository.Instance.destination, true);
+                File.Copy(MainRepository.Instance.fileName, MainRepository.Instance.destinationD, true);
 
-                _service.SavePhoto(id, MainRepository.Instance.destination);
+                _service.SavePhoto(id, MainRepository.Instance.destinationD);
             }
         }
 

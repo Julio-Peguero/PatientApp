@@ -21,15 +21,25 @@ namespace BusinessLayer
 
         public int? DoctorIndex = null;
 
-        public string fileName = null; //Direccion de Archivo en el Ordenador
+        public string fileNameD = null; //Direccion de Archivo en el Ordenador
 
-        public string destination = null; //Directorio y Nombre imagen, copiada en el Programa
+        public string destinationD = null; //Directorio y Nombre imagen, copiada en el Programa
 
         #endregion
 
         #region "Patient"
 
         public int? PatientIndex = null;
+
+        public string fileNameP = null; 
+
+        public string destinationP = null;
+
+        #endregion
+
+        #region "Lab"
+
+        public int? LabIndex = null;
 
         #endregion
 

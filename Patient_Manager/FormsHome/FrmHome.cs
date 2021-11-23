@@ -1,6 +1,7 @@
 ﻿using BusinessLayer;
 using Database.Models;
 using Patient_Manager.FormDoctor;
+using Patient_Manager.FormLab;
 using Patient_Manager.FormsMedical;
 using Patient_Manager.User;
 using System;
@@ -62,6 +63,11 @@ namespace Patient_Manager.FormsHome
             Patient();
         }
 
+        private void BtnTestLab_Click(object sender, EventArgs e)
+        {
+            TestLab();
+        }
+
         #endregion
 
 
@@ -91,6 +97,13 @@ namespace Patient_Manager.FormsHome
         {
             this.Hide();
             FrmPatients newForm = new FrmPatients();
+            newForm.Show();
+        }
+
+        public void TestLab()
+        {
+            this.Hide();
+            FrmLab newForm = new FrmLab();
             newForm.Show();
         }
 
