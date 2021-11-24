@@ -63,84 +63,26 @@ namespace Database.Repositorys
             return ExecuteDml(command);
         }
 
-        public DataDoctor GetByIdDoctor(int id)
+        public DataTable SearchPatient(string card)
         {
-            try
-            {
-                _connection.Open();
+            SqlDataAdapter query = new SqlDataAdapter();
+            SqlCommand command = new SqlCommand("SELECT Id as Code,Name,LastName,Phone,Address,Card,Date_Birth as Date,Smoker,Allergies FROM Patients WHERE Card=@card", _connection);
 
-                SqlCommand command = new SqlCommand("SELECT Id as Code,Name,LastName,Mail,Phone,Card,Photo FROM Doctors WHERE Id = @id", _connection);
+            command.Parameters.AddWithValue("@card", card);
+            query.SelectCommand = command;
 
-                command.Parameters.AddWithValue("@id", id);
-
-                SqlDataReader reader = command.ExecuteReader();
-
-                DataDoctor data = new DataDoctor();
-
-                while (reader.Read())
-                {
-                    data.Id = reader.IsDBNull(0) ? 0 : reader.GetInt32(0);
-                    data.Name = reader.IsDBNull(1) ? "" : reader.GetString(1);
-                    data.LastName = reader.IsDBNull(2) ? "" : reader.GetString(2);
-                    data.Mail = reader.IsDBNull(3) ? "" : reader.GetString(3);
-                    data.Phone = reader.IsDBNull(4) ? "" : reader.GetString(4);
-                    data.Card = reader.IsDBNull(5) ? "" : reader.GetString(5);
-                    data.Photo = reader.IsDBNull(6) ? "" : reader.GetString(6);
-                }
-
-                reader.Close();
-                reader.Dispose();
-
-                _connection.Close();
-
-                return data;
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
+            return LoadData(query);
         }
 
-        public DataPatient GetByIdPatient(int id)
+        public DataTable SearchDoctor(string card)
         {
-            try
-            {
-                _connection.Open();
+            SqlDataAdapter query = new SqlDataAdapter();
+            SqlCommand command = new SqlCommand("SELECT Id as Code,Name,LastName,Mail,Phone,Card FROM Doctors WHERE Card=@card", _connection);
 
-                SqlCommand command = new SqlCommand("SELECT Id as Code,Name,LastName,Phone,Address,Card,Date_Birth as Date,Smoker,Allergies,Photo FROM Patients WHERE Id = @id", _connection);
+            command.Parameters.AddWithValue("@card", card);
+            query.SelectCommand = command;
 
-                command.Parameters.AddWithValue("@id", id);
-
-                SqlDataReader reader = command.ExecuteReader();
-
-                DataPatient data = new DataPatient();
-
-                while (reader.Read())
-                {
-
-                    data.Id = reader.IsDBNull(0) ? 0 : reader.GetInt32(0);
-                    data.Name = reader.IsDBNull(1) ? "" : reader.GetString(1);
-                    data.LastName = reader.IsDBNull(2) ? "" : reader.GetString(2);
-                    data.Phone = reader.IsDBNull(3) ? "" : reader.GetString(3);
-                    data.Address = reader.IsDBNull(4) ? "" : reader.GetString(4);
-                    data.Card = reader.IsDBNull(5) ? "" : reader.GetString(5);
-                    data.DateBirth = reader.IsDBNull(6) ? DateTime.Now : reader.GetDateTime(6);
-                    data.Smoker = reader.IsDBNull(7) ? false : reader.GetBoolean(7);
-                    data.Allergies = reader.IsDBNull(8) ? "" : reader.GetString(8);
-                    data.Photo = reader.IsDBNull(9) ? "" : reader.GetString(9);
-                }
-
-                reader.Close();
-                reader.Dispose();
-
-                _connection.Close();
-
-                return data;
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
+            return LoadData(query);
         }
 
         #endregion

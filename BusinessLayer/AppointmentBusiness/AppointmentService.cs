@@ -45,14 +45,14 @@ namespace BusinessLayer.AppointmentBusiness
             return repository.Delete(id);
         }
 
-        public DataDoctor GetByIdDoctor(int id)
+        public DataTable SearchPatient(string card)
         {
-            return repository.GetByIdDoctor(id);
+            return repository.SearchPatient(card);
         }
 
-        public DataPatient GetByIdPatient(int id)
+        public DataTable SearchDoctor(string card)
         {
-            return repository.GetByIdPatient(id);
+            return repository.SearchDoctor(card);
         }
 
         #endregion

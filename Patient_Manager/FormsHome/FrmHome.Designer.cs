@@ -168,6 +168,7 @@ namespace Patient_Manager.FormsHome
             this.BtnKeep.TabIndex = 4;
             this.BtnKeep.Text = "Keeping maintenance";
             this.BtnKeep.UseVisualStyleBackColor = false;
+            this.BtnKeep.Click += new System.EventHandler(this.BtnKeep_Click);
             // 
             // BtnTestResult
             // 

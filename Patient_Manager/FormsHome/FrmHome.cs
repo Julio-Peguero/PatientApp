@@ -1,6 +1,7 @@
 ﻿using BusinessLayer;
 using Database.Models;
 using Patient_Manager.FormDoctor;
+using Patient_Manager.FormKeep;
 using Patient_Manager.FormLab;
 using Patient_Manager.FormsMedical;
 using Patient_Manager.User;
@@ -13,6 +14,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using FrmDoctor = Patient_Manager.FormDoctor.FrmDoctor;
 
 namespace Patient_Manager.FormsHome
 {
@@ -68,6 +70,11 @@ namespace Patient_Manager.FormsHome
             TestLab();
         }
 
+        private void BtnKeep_Click(object sender, EventArgs e)
+        {
+            Appointment();
+        }
+
         #endregion
 
 
@@ -104,6 +111,13 @@ namespace Patient_Manager.FormsHome
         {
             this.Hide();
             FrmLab newForm = new FrmLab();
+            newForm.Show();
+        }
+
+        public void Appointment()
+        {
+            this.Hide();
+            FrmKeep newForm = new FrmKeep();
             newForm.Show();
         }
 

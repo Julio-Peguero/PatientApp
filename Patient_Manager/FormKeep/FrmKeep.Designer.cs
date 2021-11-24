@@ -122,7 +122,7 @@ namespace Patient_Manager.FormKeep
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(207, 36);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
@@ -168,7 +168,7 @@ namespace Patient_Manager.FormKeep
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(207, 36);
             this.tableLayoutPanel5.TabIndex = 5;
             // 
@@ -296,7 +296,7 @@ namespace Patient_Manager.FormKeep
             this.homeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.homeToolStripMenuItem.ForeColor = System.Drawing.Color.Honeydew;
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.homeToolStripMenuItem.Text = "Home";
             this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
@@ -305,7 +305,7 @@ namespace Patient_Manager.FormKeep
             this.singOffToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.singOffToolStripMenuItem.ForeColor = System.Drawing.Color.Honeydew;
             this.singOffToolStripMenuItem.Name = "singOffToolStripMenuItem";
-            this.singOffToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.singOffToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.singOffToolStripMenuItem.Text = "Sing Off";
             this.singOffToolStripMenuItem.Click += new System.EventHandler(this.singOffToolStripMenuItem_Click);
             // 
@@ -319,6 +319,8 @@ namespace Patient_Manager.FormKeep
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmKeep";
             this.Text = "Keep";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmKeep_FormClosed);
+            this.Load += new System.EventHandler(this.FrmKeep_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
