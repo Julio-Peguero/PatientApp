@@ -180,13 +180,16 @@ namespace Patient_Manager.FormsMedical
                         Address = TxbAddress.Text,
                         DateBirth = DtpBirth.Value.Date,
                         Allergies = TxbAllergies.Text,
-                        Smoker = CbkYes.Checked ? true : CbkNo.Checked,
+                        Smoker = CbkNo.Checked ? false : CbkYes.Checked,
                         Id = MainRepository.Instance.PatientIndex.Value
                     };
 
-                    _service.Edit(patient);
+                    bool result = _service.Edit(patient);
 
-                    SavePhoto();
+                    if (result)
+                    {
+                        SavePhoto();
+                    }
 
                     MessageBox.Show("Patient edited successfully", "Notification");
                     Back();
@@ -211,13 +214,13 @@ namespace Patient_Manager.FormsMedical
             {
                 MainRepository.Instance.fileNameP = PhotoDialog.FileName;
 
-                if (PhotoDialog.FileName.EndsWith(".png") || PhotoDialog.FileName.EndsWith(".jpg"))
+                if (PhotoDialog.FileName.EndsWith(".png") || PhotoDialog.FileName.EndsWith(".jpg") || PhotoDialog.FileName.EndsWith(".jpeg"))
                 {
                     PtbPatients.ImageLocation = MainRepository.Instance.fileNameP;
                 }
                 else
                 {
-                    MessageBox.Show("You can only upload images .png or .jpg", "Error");
+                    MessageBox.Show("You can only upload images .png, .jpg or .jpeg", "Error");
                 }
             }
         }

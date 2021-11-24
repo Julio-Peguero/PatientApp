@@ -335,6 +335,7 @@ namespace Patient_Manager.FormDoctor
             // PhotoDialog
             // 
             this.PhotoDialog.FileName = "PhotoDialog";
+            this.PhotoDialog.Filter = "Images Files|*.PNG;*.JPG;*.JPGE|All files|*.*";
             // 
             // FrmNewDoctor
             // 

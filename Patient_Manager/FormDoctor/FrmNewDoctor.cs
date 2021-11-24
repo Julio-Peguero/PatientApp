@@ -190,13 +190,13 @@ namespace Patient_Manager.FormDoctor
             {
                 MainRepository.Instance.fileNameD = PhotoDialog.FileName;
 
-                if (PhotoDialog.FileName.EndsWith(".png") || PhotoDialog.FileName.EndsWith(".jpg"))
+                if (PhotoDialog.FileName.EndsWith(".png") || PhotoDialog.FileName.EndsWith(".jpg") || PhotoDialog.FileName.EndsWith(".jpeg"))
                 {
                     PtbPhotoD.ImageLocation = MainRepository.Instance.fileNameD;
                 }
                 else
                 {
-                    MessageBox.Show("You can only upload images .png or .jpg", "Error");
+                    MessageBox.Show("You can only upload images .png, .jpg or .jpeg", "Error");
                 }
             }
         }

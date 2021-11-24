@@ -47,7 +47,7 @@ namespace Database.Repositorys
 
         public bool Edit(DataPatient item)
         {
-            SqlCommand command = new SqlCommand("UPDATE Patients set Name=@name,LastName=@lastname,Mail=@mail,Phone=@phone,Card=@card WHERE Id = @id", _connection);
+            SqlCommand command = new SqlCommand("UPDATE Patients set Name=@name,LastName=@lastname,Phone=@phone,Address=@address,Card=@card,Date_Birth=@date_birth,Smoker=@smoker,Allergies=@allergies WHERE Id = @id", _connection);
 
             command.Parameters.AddWithValue("@name", item.Name);
             command.Parameters.AddWithValue("@lastname", item.LastName);
@@ -57,6 +57,7 @@ namespace Database.Repositorys
             command.Parameters.AddWithValue("@date_birth", item.DateBirth);
             command.Parameters.AddWithValue("@smoker", item.Smoker);
             command.Parameters.AddWithValue("@allergies", item.Allergies);
+            command.Parameters.AddWithValue("@id", item.Id);
 
             return ExecuteDml(command);
         }
@@ -103,8 +104,7 @@ namespace Database.Repositorys
                     data.DateBirth = reader.IsDBNull(6) ? DateTime.Now : reader.GetDateTime(6);
                     data.Smoker = reader.IsDBNull(7) ? false : reader.GetBoolean(7);
                     data.Allergies = reader.IsDBNull(8) ? "" : reader.GetString(8);
-
-                    
+                    data.Photo = reader.IsDBNull(9) ? "" : reader.GetString(9);
                 }
 
                 reader.Close();
