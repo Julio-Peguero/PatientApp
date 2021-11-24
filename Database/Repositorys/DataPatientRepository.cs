@@ -93,18 +93,18 @@ namespace Database.Repositorys
 
                 while (reader.Read())
                 {
-                    /*
+                    
                     data.Id = reader.IsDBNull(0) ? 0 : reader.GetInt32(0);
                     data.Name = reader.IsDBNull(1) ? "" : reader.GetString(1);
                     data.LastName = reader.IsDBNull(2) ? "" : reader.GetString(2);
                     data.Phone = reader.IsDBNull(3) ? "" : reader.GetString(3);
                     data.Address = reader.IsDBNull(4) ? "" : reader.GetString(4);
                     data.Card = reader.IsDBNull(5) ? "" : reader.GetString(5);
-                    data.DateBirth = reader.IsDBNull(6) ? null : reader.GetDateTime(6);
-                    data.Smoker = reader.IsDBNull(7) ? null : reader.GetBoolean(7);
-                    data.Allergies = reader.IsDBNull(8) ? "" : reader.GetString(9);
+                    data.DateBirth = reader.IsDBNull(6) ? DateTime.Now : reader.GetDateTime(6);
+                    data.Smoker = reader.IsDBNull(7) ? false : reader.GetBoolean(7);
+                    data.Allergies = reader.IsDBNull(8) ? "" : reader.GetString(8);
 
-                    */
+                    
                 }
 
                 reader.Close();

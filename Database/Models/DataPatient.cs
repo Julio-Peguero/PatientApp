@@ -22,7 +22,7 @@ namespace Database.Models
 
         public bool Smoker { get; set; }
 
-        public bool Allergies { get; set; }
+        public string Allergies { get; set; }
 
         public string Photo { get; set; }
 

@@ -88,10 +88,16 @@ namespace Patient_Manager.FormsMedical
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(TxbName.Text) || string.IsNullOrWhiteSpace(TxbLastName.Text))
+                if (string.IsNullOrWhiteSpace(TxbName.Text) || string.IsNullOrWhiteSpace(TxbLastName.Text) 
+                    || string.IsNullOrWhiteSpace(TxbAddress.Text) || string.IsNullOrWhiteSpace(TxbAllergies.Text) 
+                    || !MtbCard.MaskCompleted || !MtbPhone.MaskCompleted || PtbPatients.ImageLocation == null)
                 {
 
                     MessageBox.Show("You must complete all the data", "Warning");
+                }
+                else if (CbkYes.Checked == CbkNo.Checked)
+                {
+                    MessageBox.Show("You must have different answers in smoker or select one", "Notification");
                 }
                 else
                 {
@@ -102,7 +108,12 @@ namespace Patient_Manager.FormsMedical
                         LastName = TxbLastName.Text,
                         Card = MtbCard.Text,
                         Phone = MtbPhone.Text,
-                    };
+                        Address = TxbAddress.Text,
+                        DateBirth = DtpBirth.Value.Date,
+                        Allergies = TxbAllergies.Text,
+                        Smoker = CbkNo.Checked ? false : CbkYes.Checked
+
+                };
 
                     bool result = _service.Add(patient);
 
@@ -130,10 +141,15 @@ namespace Patient_Manager.FormsMedical
                 DataPatient patient = _service.GetById(MainRepository.Instance.PatientIndex.Value);
                 TxbName.Text = patient.Name;
                 TxbLastName.Text = patient.LastName;
+                TxbAddress.Text = patient.Address;
+                TxbAllergies.Text = patient.Allergies;
                 MtbCard.Text = patient.Card;
                 MtbPhone.Text = patient.Phone;
-                patient.Id = MainRepository.Instance.DoctorIndex.Value;
+                patient.Id = MainRepository.Instance.PatientIndex.Value;
                 PtbPatients.ImageLocation = patient.Photo;
+                CbkYes.Checked = patient.Smoker;
+                CbkNo.Checked = patient.Smoker == false ? true : false;
+                DtpBirth.Value = patient.DateBirth;
             }
         }
 
@@ -141,21 +157,31 @@ namespace Patient_Manager.FormsMedical
         {
             try
             {
-
-                if (string.IsNullOrWhiteSpace(TxbName.Text) || string.IsNullOrWhiteSpace(TxbLastName.Text))
+                if (string.IsNullOrWhiteSpace(TxbName.Text) || string.IsNullOrWhiteSpace(TxbLastName.Text)
+                    || string.IsNullOrWhiteSpace(TxbAddress.Text) || string.IsNullOrWhiteSpace(TxbAllergies.Text)
+                    || !MtbCard.MaskCompleted || !MtbPhone.MaskCompleted || PtbPatients.ImageLocation == null)
                 {
 
                     MessageBox.Show("You must complete all the data", "Warning");
                 }
+                else if (CbkYes.Checked == CbkNo.Checked)
+                {
+                    MessageBox.Show("You must have different answers in smoker or select one", "Notification");
+                }
                 else
                 {
+
                     DataPatient patient = new DataPatient()
                     {
                         Name = TxbName.Text,
                         LastName = TxbLastName.Text,
-                        Phone = MtbPhone.Text,
                         Card = MtbCard.Text,
-                        Id = MainRepository.Instance.DoctorIndex.Value
+                        Phone = MtbPhone.Text,
+                        Address = TxbAddress.Text,
+                        DateBirth = DtpBirth.Value.Date,
+                        Allergies = TxbAllergies.Text,
+                        Smoker = CbkYes.Checked ? true : CbkNo.Checked,
+                        Id = MainRepository.Instance.PatientIndex.Value
                     };
 
                     _service.Edit(patient);
@@ -183,11 +209,11 @@ namespace Patient_Manager.FormsMedical
 
             if (result == DialogResult.OK)
             {
-                MainRepository.Instance.fileName = PhotoDialog.FileName;
+                MainRepository.Instance.fileNameP = PhotoDialog.FileName;
 
                 if (PhotoDialog.FileName.EndsWith(".png") || PhotoDialog.FileName.EndsWith(".jpg"))
                 {
-                    PtbPatients.ImageLocation = MainRepository.Instance.fileName;
+                    PtbPatients.ImageLocation = MainRepository.Instance.fileNameP;
                 }
                 else
                 {
@@ -198,21 +224,21 @@ namespace Patient_Manager.FormsMedical
 
         private void SavePhoto()
         {
-            if (!string.IsNullOrWhiteSpace(MainRepository.Instance.fileName))
+            if (!string.IsNullOrWhiteSpace(MainRepository.Instance.fileNameP))
             {
-                int id = MainRepository.Instance.DoctorIndex != null ? (int)MainRepository.Instance.DoctorIndex.Value : _service.GetLastId();
+                int id = MainRepository.Instance.PatientIndex != null ? (int)MainRepository.Instance.PatientIndex.Value : _service.GetLastId();
 
                 string directory = $@"Images\Patient\{id}\";
                 CreateDirectory(directory);
 
-                string[] fileNameSplit = MainRepository.Instance.fileName.Split("\\");
+                string[] fileNameSplit = MainRepository.Instance.fileNameP.Split("\\");
                 string filename = fileNameSplit[(fileNameSplit.Length - 1)];
 
-                MainRepository.Instance.destinationD = directory + filename;
+                MainRepository.Instance.destinationP = directory + filename;
 
-                File.Copy(MainRepository.Instance.fileName, MainRepository.Instance.destinationD, true);
+                File.Copy(MainRepository.Instance.fileNameP, MainRepository.Instance.destinationP, true);
 
-                _service.SavePhoto(id, MainRepository.Instance.destinationD);
+                _service.SavePhoto(id, MainRepository.Instance.destinationP);
             }
         }
 

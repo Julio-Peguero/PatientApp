@@ -188,11 +188,11 @@ namespace Patient_Manager.FormDoctor
 
             if (result == DialogResult.OK)
             {
-                MainRepository.Instance.fileName = PhotoDialog.FileName;
+                MainRepository.Instance.fileNameD = PhotoDialog.FileName;
 
                 if (PhotoDialog.FileName.EndsWith(".png") || PhotoDialog.FileName.EndsWith(".jpg"))
                 {
-                    PtbPhotoD.ImageLocation = MainRepository.Instance.fileName;
+                    PtbPhotoD.ImageLocation = MainRepository.Instance.fileNameD;
                 }
                 else
                 {
@@ -203,19 +203,19 @@ namespace Patient_Manager.FormDoctor
 
         private void SavePhoto() 
         {
-            if(!string.IsNullOrWhiteSpace(MainRepository.Instance.fileName))
+            if(!string.IsNullOrWhiteSpace(MainRepository.Instance.fileNameD))
             {
                 int id = MainRepository.Instance.DoctorIndex != null ? (int)MainRepository.Instance.DoctorIndex.Value : _service.GetLastId();
 
                 string directory = $@"Images\Doctor\{id}\";
                 CreateDirectory(directory);
 
-                string[] fileNameSplit = MainRepository.Instance.fileName.Split("\\");
+                string[] fileNameSplit = MainRepository.Instance.fileNameD.Split("\\");
                 string filename = fileNameSplit[(fileNameSplit.Length - 1)];
 
                 MainRepository.Instance.destinationD = directory + filename;
 
-                File.Copy(MainRepository.Instance.fileName, MainRepository.Instance.destinationD, true);
+                File.Copy(MainRepository.Instance.fileNameD, MainRepository.Instance.destinationD, true);
 
                 _service.SavePhoto(id, MainRepository.Instance.destinationD);
             }

@@ -45,7 +45,7 @@ namespace Patient_Manager.FormsMedical
             this.MtbPhone = new System.Windows.Forms.MaskedTextBox();
             this.TxbAddress = new System.Windows.Forms.TextBox();
             this.TxbAllergies = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DtpBirth = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.CbkYes = new System.Windows.Forms.CheckBox();
             this.CbkNo = new System.Windows.Forms.CheckBox();
@@ -105,7 +105,7 @@ namespace Patient_Manager.FormsMedical
             this.tableLayoutPanel4.Controls.Add(this.MtbPhone, 1, 2);
             this.tableLayoutPanel4.Controls.Add(this.TxbAddress, 1, 3);
             this.tableLayoutPanel4.Controls.Add(this.TxbAllergies, 1, 7);
-            this.tableLayoutPanel4.Controls.Add(this.dateTimePicker1, 1, 5);
+            this.tableLayoutPanel4.Controls.Add(this.DtpBirth, 1, 5);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel2, 1, 6);
             this.tableLayoutPanel4.Controls.Add(this.LblPhoto, 0, 8);
             this.tableLayoutPanel4.Controls.Add(this.BtnLoadPhoto, 1, 8);
@@ -271,13 +271,13 @@ namespace Patient_Manager.FormsMedical
             this.TxbAllergies.Size = new System.Drawing.Size(163, 23);
             this.TxbAllergies.TabIndex = 23;
             // 
-            // dateTimePicker1
+            // DtpBirth
             // 
-            this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePicker1.Location = new System.Drawing.Point(171, 158);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(163, 23);
-            this.dateTimePicker1.TabIndex = 24;
+            this.DtpBirth.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DtpBirth.Location = new System.Drawing.Point(171, 158);
+            this.DtpBirth.Name = "DtpBirth";
+            this.DtpBirth.Size = new System.Drawing.Size(163, 23);
+            this.DtpBirth.TabIndex = 24;
             // 
             // tableLayoutPanel2
             // 
@@ -486,7 +486,7 @@ namespace Patient_Manager.FormsMedical
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Button BtnBack;
         private System.Windows.Forms.Button BtnConfirm;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DtpBirth;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.CheckBox CbkYes;
         private System.Windows.Forms.CheckBox CbkNo;
