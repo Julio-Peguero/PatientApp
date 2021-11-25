@@ -49,7 +49,7 @@ namespace Database.Repositorys
 
         public DataTable GetAll()
         {
-            SqlDataAdapter query = new SqlDataAdapter("SELECT Id as Code,IdPatients AS Patients,IdDoctor AS Doctor,Date,Reason,State FROM Keep", _connection);
+            SqlDataAdapter query = new SqlDataAdapter("SELECT k.Id as Code,p.Name AS Patients,d.Name AS Doctor,k.Date,k.Reason,ks.Name as Status FROM Keep k JOIN KeepStatus ks ON k.State = ks.Id JOIN Patients p ON p.Id = k.IdPatients JOIN Doctors d ON d.Id = k.IdDoctor", _connection);
 
             return LoadData(query);
         }

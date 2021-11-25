@@ -41,12 +41,13 @@ namespace Patient_Manager.FormKeep
             this.TxbPatient = new System.Windows.Forms.TextBox();
             this.TxbDoctor = new System.Windows.Forms.TextBox();
             this.TxbReason = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.DtpDate = new System.Windows.Forms.DateTimePicker();
+            this.DtpHour = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.appointmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TblRegister.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -102,8 +103,8 @@ namespace Patient_Manager.FormKeep
             this.tableLayoutPanel1.Controls.Add(this.TxbPatient, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.TxbDoctor, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.TxbReason, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker2, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.DtpDate, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.DtpHour, 1, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(74, 118);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -206,23 +207,26 @@ namespace Patient_Manager.FormKeep
             this.TxbReason.Size = new System.Drawing.Size(163, 23);
             this.TxbReason.TabIndex = 9;
             // 
-            // dateTimePicker1
+            // DtpDate
             // 
-            this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(171, 135);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(163, 23);
-            this.dateTimePicker1.TabIndex = 10;
-            this.dateTimePicker1.Value = new System.DateTime(2021, 11, 24, 18, 17, 2, 0);
+            this.DtpDate.CustomFormat = "";
+            this.DtpDate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpDate.Location = new System.Drawing.Point(171, 135);
+            this.DtpDate.Name = "DtpDate";
+            this.DtpDate.Size = new System.Drawing.Size(163, 23);
+            this.DtpDate.TabIndex = 10;
+            this.DtpDate.Value = new System.DateTime(2021, 11, 24, 18, 17, 2, 0);
             // 
-            // dateTimePicker2
+            // DtpHour
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker2.Location = new System.Drawing.Point(171, 201);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(163, 23);
-            this.dateTimePicker2.TabIndex = 11;
+            this.DtpHour.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DtpHour.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.DtpHour.Location = new System.Drawing.Point(171, 201);
+            this.DtpHour.Name = "DtpHour";
+            this.DtpHour.ShowUpDown = true;
+            this.DtpHour.Size = new System.Drawing.Size(163, 23);
+            this.DtpHour.TabIndex = 11;
             // 
             // label1
             // 
@@ -253,7 +257,8 @@ namespace Patient_Manager.FormKeep
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.appointmentToolStripMenuItem});
+            this.appointmentToolStripMenuItem,
+            this.backToolStripMenuItem});
             this.optionsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.optionsToolStripMenuItem.ForeColor = System.Drawing.Color.Honeydew;
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
@@ -265,9 +270,18 @@ namespace Patient_Manager.FormKeep
             this.appointmentToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.appointmentToolStripMenuItem.ForeColor = System.Drawing.Color.Honeydew;
             this.appointmentToolStripMenuItem.Name = "appointmentToolStripMenuItem";
-            this.appointmentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.appointmentToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.appointmentToolStripMenuItem.Text = "Appointment";
             this.appointmentToolStripMenuItem.Click += new System.EventHandler(this.appointmentToolStripMenuItem_Click);
+            // 
+            // backToolStripMenuItem
+            // 
+            this.backToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.backToolStripMenuItem.ForeColor = System.Drawing.Color.Honeydew;
+            this.backToolStripMenuItem.Name = "backToolStripMenuItem";
+            this.backToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.backToolStripMenuItem.Text = "Back";
+            this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
             // 
             // FrmDate
             // 
@@ -279,6 +293,7 @@ namespace Patient_Manager.FormKeep
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmDate";
             this.Text = "FrmDate";
+            this.Load += new System.EventHandler(this.FrmDate_Load);
             this.TblRegister.ResumeLayout(false);
             this.TblRegister.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -304,10 +319,11 @@ namespace Patient_Manager.FormKeep
         private System.Windows.Forms.TextBox TxbDoctor;
         private System.Windows.Forms.TextBox TxbReason;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker DtpDate;
+        private System.Windows.Forms.DateTimePicker DtpHour;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem appointmentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backToolStripMenuItem;
     }
 }

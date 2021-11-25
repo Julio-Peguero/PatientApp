@@ -112,8 +112,7 @@ namespace Patient_Manager.FormsMedical
                         DateBirth = DtpBirth.Value.Date,
                         Allergies = TxbAllergies.Text,
                         Smoker = CbkNo.Checked ? false : CbkYes.Checked
-
-                };
+                    };
 
                     bool result = _service.Add(patient);
 
