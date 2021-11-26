@@ -109,7 +109,7 @@ namespace Patient_Manager.FormKeep
             this.BtnBack.Name = "BtnBack";
             this.BtnBack.Size = new System.Drawing.Size(207, 41);
             this.BtnBack.TabIndex = 5;
-            this.BtnBack.Text = "Back";
+            this.BtnBack.Text = "Cancel";
             this.BtnBack.UseVisualStyleBackColor = false;
             this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 

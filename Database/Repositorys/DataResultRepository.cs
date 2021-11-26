@@ -21,13 +21,12 @@ namespace Database.Repositorys
 
         public bool Add(DataResult item)
         {
-            SqlCommand command = new SqlCommand("INSERT INTO ResultLab(IdPatients,IdKeep,IdLabTest,IdDoctor,ResltTest,StateResult) VALUES(@idpatients,@idkeep,@idlab,@iddoctor,@result,@statusresult)", _connection);
+            SqlCommand command = new SqlCommand("INSERT INTO ResultLab(IdPatients,IdKeep,IdLabTest,IdDoctor,StateResult) VALUES(@idpatients,@idkeep,@idlab,@iddoctor,@statusresult)", _connection);
 
             command.Parameters.AddWithValue("@idpatients", item.IdPtient);
             command.Parameters.AddWithValue("@idkeep", item.IdAppointment);
             command.Parameters.AddWithValue("@idlab", item.IdTestLab);
             command.Parameters.AddWithValue("@iddoctor", item.IdDoctor);
-            command.Parameters.AddWithValue("@result", item.Result);
             command.Parameters.AddWithValue("@statusresult", item.IdStatus);
 
             return ExecuteDml(command);

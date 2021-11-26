@@ -16,6 +16,8 @@ namespace BusinessLayer
 
         public int? IdLab = null;
 
+        public List<int> LabsTest { get; set; } = new List<int>();
+
         private KeepRepository()
         {
 
