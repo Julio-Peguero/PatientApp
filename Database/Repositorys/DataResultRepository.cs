@@ -33,6 +33,18 @@ namespace Database.Repositorys
         }
 
 
+        public DataTable Search(string card)
+        {
+            SqlDataAdapter query = new SqlDataAdapter();
+            SqlCommand command = new SqlCommand("SELECT r.Id as Code,p.Name,p.LastName,p.Card,t.Name as Test FROM ResultLab r JOIN Patients p ON r.IdPatients = p.Id JOIN TestLab t ON r.IdLabTest = t.Id WHERE p.Card=@card", _connection);
+
+            command.Parameters.AddWithValue("@card", card);
+            query.SelectCommand = command;
+
+            return LoadData(query);
+        }
+
+
         public DataResult GetById(int id)
         {
             try
@@ -77,6 +89,7 @@ namespace Database.Repositorys
 
             command.Parameters.AddWithValue("@result", item.Result);
             command.Parameters.AddWithValue("@status", item.IdStatus);
+            command.Parameters.AddWithValue("@id", item.Id);
 
             return ExecuteDml(command);
         }

@@ -37,5 +37,10 @@ namespace BusinessLayer.ResultBusiness
             return repository.GetAll();
         }
 
+        public DataTable Search(string card)
+        {
+            return repository.Search(card);
+        }
+
     }
 }

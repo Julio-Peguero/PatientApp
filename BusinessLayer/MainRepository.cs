@@ -43,6 +43,12 @@ namespace BusinessLayer
 
         #endregion
 
+        #region "Result"
+
+        public int? ResultIndex = null;
+
+        #endregion
+
         private MainRepository()
         {
 
