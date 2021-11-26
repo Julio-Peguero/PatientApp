@@ -53,17 +53,17 @@ namespace Patient_Manager.FormKeep
 
         private void BtnConsult_Click(object sender, EventArgs e)
         {
-
+            Consult();
         }
 
         private void BtnCheck_Click(object sender, EventArgs e)
         {
-
+            Check();
         }
 
         private void BtnSee_Click(object sender, EventArgs e)
         {
-
+            See();
         }
 
         private void BtnDeselect_Click(object sender, EventArgs e)
@@ -219,6 +219,27 @@ namespace Patient_Manager.FormKeep
                     break;
             }
 
+        }
+
+        public void Check()
+        {
+            FrmCheck newForm = new FrmCheck();
+            newForm.Show();
+            this.Hide();
+        }
+
+        public void See()
+        {
+            FrmSee newForm = new FrmSee();
+            newForm.Show();
+            this.Hide();
+        }
+
+        public void Consult()
+        {
+            FrmConsult newForm = new FrmConsult();
+            newForm.Show();
+            this.Hide();
         }
 
         #endregion        

@@ -30,15 +30,15 @@ namespace Patient_Manager.FormKeep
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.BtnTest = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.BtnDeselect = new System.Windows.Forms.Button();
-            this.BtnBack = new System.Windows.Forms.Button();
             this.DgvConsult = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.BtnBack = new System.Windows.Forms.Button();
+            this.BtnTest = new System.Windows.Forms.Button();
+            this.BtnDeselect = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvConsult)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -61,6 +61,24 @@ namespace Patient_Manager.FormKeep
             this.tableLayoutPanel1.Size = new System.Drawing.Size(486, 520);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
+            // DgvConsult
+            // 
+            this.DgvConsult.AllowUserToAddRows = false;
+            this.DgvConsult.AllowUserToDeleteRows = false;
+            this.DgvConsult.BackgroundColor = System.Drawing.Color.White;
+            this.DgvConsult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvConsult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgvConsult.GridColor = System.Drawing.Color.DarkGray;
+            this.DgvConsult.Location = new System.Drawing.Point(29, 161);
+            this.DgvConsult.MultiSelect = false;
+            this.DgvConsult.Name = "DgvConsult";
+            this.DgvConsult.ReadOnly = true;
+            this.DgvConsult.RowTemplate.Height = 25;
+            this.DgvConsult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgvConsult.Size = new System.Drawing.Size(426, 259);
+            this.DgvConsult.TabIndex = 7;
+            this.DgvConsult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvConsult_CellContentClick);
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
@@ -79,6 +97,22 @@ namespace Patient_Manager.FormKeep
             this.tableLayoutPanel2.Size = new System.Drawing.Size(426, 91);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
+            // BtnBack
+            // 
+            this.BtnBack.BackColor = System.Drawing.Color.Honeydew;
+            this.BtnBack.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnBack.FlatAppearance.BorderSize = 0;
+            this.BtnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnBack.Location = new System.Drawing.Point(3, 47);
+            this.BtnBack.Name = "BtnBack";
+            this.BtnBack.Size = new System.Drawing.Size(207, 41);
+            this.BtnBack.TabIndex = 5;
+            this.BtnBack.Text = "Back";
+            this.BtnBack.UseVisualStyleBackColor = false;
+            this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
+            // 
             // BtnTest
             // 
             this.BtnTest.BackColor = System.Drawing.Color.Honeydew;
@@ -93,6 +127,23 @@ namespace Patient_Manager.FormKeep
             this.BtnTest.TabIndex = 3;
             this.BtnTest.Text = "Run tests";
             this.BtnTest.UseVisualStyleBackColor = false;
+            this.BtnTest.Click += new System.EventHandler(this.BtnTest_Click);
+            // 
+            // BtnDeselect
+            // 
+            this.BtnDeselect.BackColor = System.Drawing.Color.Honeydew;
+            this.tableLayoutPanel2.SetColumnSpan(this.BtnDeselect, 2);
+            this.BtnDeselect.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnDeselect.FlatAppearance.BorderSize = 0;
+            this.BtnDeselect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDeselect.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnDeselect.Location = new System.Drawing.Point(3, 3);
+            this.BtnDeselect.Name = "BtnDeselect";
+            this.BtnDeselect.Size = new System.Drawing.Size(420, 38);
+            this.BtnDeselect.TabIndex = 4;
+            this.BtnDeselect.Text = "Deselect";
+            this.BtnDeselect.UseVisualStyleBackColor = false;
+            this.BtnDeselect.Click += new System.EventHandler(this.BtnDeselect_Click);
             // 
             // label1
             // 
@@ -109,53 +160,6 @@ namespace Patient_Manager.FormKeep
             this.label1.Text = "Maintenance";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // BtnDeselect
-            // 
-            this.BtnDeselect.BackColor = System.Drawing.Color.Honeydew;
-            this.tableLayoutPanel2.SetColumnSpan(this.BtnDeselect, 2);
-            this.BtnDeselect.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnDeselect.FlatAppearance.BorderSize = 0;
-            this.BtnDeselect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnDeselect.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnDeselect.Location = new System.Drawing.Point(3, 3);
-            this.BtnDeselect.Name = "BtnDeselect";
-            this.BtnDeselect.Size = new System.Drawing.Size(420, 38);
-            this.BtnDeselect.TabIndex = 4;
-            this.BtnDeselect.Text = "Deselect";
-            this.BtnDeselect.UseVisualStyleBackColor = false;
-            // 
-            // BtnBack
-            // 
-            this.BtnBack.BackColor = System.Drawing.Color.Honeydew;
-            this.BtnBack.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnBack.FlatAppearance.BorderSize = 0;
-            this.BtnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnBack.Location = new System.Drawing.Point(3, 47);
-            this.BtnBack.Name = "BtnBack";
-            this.BtnBack.Size = new System.Drawing.Size(207, 41);
-            this.BtnBack.TabIndex = 5;
-            this.BtnBack.Text = "Back";
-            this.BtnBack.UseVisualStyleBackColor = false;
-            // 
-            // DgvConsult
-            // 
-            this.DgvConsult.AllowUserToAddRows = false;
-            this.DgvConsult.AllowUserToDeleteRows = false;
-            this.DgvConsult.BackgroundColor = System.Drawing.Color.White;
-            this.DgvConsult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvConsult.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgvConsult.GridColor = System.Drawing.Color.DarkGray;
-            this.DgvConsult.Location = new System.Drawing.Point(29, 161);
-            this.DgvConsult.MultiSelect = false;
-            this.DgvConsult.Name = "DgvConsult";
-            this.DgvConsult.ReadOnly = true;
-            this.DgvConsult.RowTemplate.Height = 25;
-            this.DgvConsult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvConsult.Size = new System.Drawing.Size(426, 259);
-            this.DgvConsult.TabIndex = 7;
-            // 
             // FrmConsult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -164,10 +168,11 @@ namespace Patient_Manager.FormKeep
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmConsult";
             this.Text = "FrmConsult";
+            this.Load += new System.EventHandler(this.FrmConsult_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvConsult)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

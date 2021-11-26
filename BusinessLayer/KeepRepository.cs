@@ -14,6 +14,8 @@ namespace BusinessLayer
 
         public int? IdDoctor = null;
 
+        public int? IdLab = null;
+
         private KeepRepository()
         {
 
