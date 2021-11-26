@@ -55,6 +55,11 @@ namespace BusinessLayer.AppointmentBusiness
             return repository.SearchDoctor(card);
         }
 
+        public DataAppointment GetById(int id)
+        {
+            return repository.GetById(id);
+        }
+
         #endregion
     }
 }

@@ -88,8 +88,7 @@ namespace Patient_Manager.FormKeep
 
                     IdPatient = KeepRepository.Instance.IdPatient.Value,
                     IdDoctor = KeepRepository.Instance.IdDoctor.Value,
-                    Date = DtpDate.Value.Date,
-                    
+                    Date = DtpDate.Value.Date + DtpHour.Value.TimeOfDay,                    
                     Reason = TxbReason.Text,
                     State = 1
 

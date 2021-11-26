@@ -85,6 +85,43 @@ namespace Database.Repositorys
             return LoadData(query);
         }
 
+        public DataAppointment GetById(int id)
+        {
+            try
+            {
+                _connection.Open();
+
+                SqlCommand command = new SqlCommand("SELECT Id,IdPatients,IdDoctor,Date,Reason,State FROM Keep  WHERE Id = @id", _connection);
+
+                command.Parameters.AddWithValue("@id", id);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                DataAppointment data = new DataAppointment();
+
+                while (reader.Read())
+                {
+                    data.Id = reader.IsDBNull(0) ? 0 : reader.GetInt32(0);
+                    data.IdPatient = reader.IsDBNull(1) ? 0 : reader.GetInt32(1);
+                    data.IdDoctor = reader.IsDBNull(2) ? 0 : reader.GetInt32(2);
+                    data.Date = reader.IsDBNull(3) ? DateTime.Now : reader.GetDateTime(3);
+                    data.Reason = reader.IsDBNull(4) ? "" : reader.GetString(4);
+                    data.State = reader.IsDBNull(5) ? 0 : reader.GetInt32(5);
+                }
+
+                reader.Close();
+                reader.Dispose();
+
+                _connection.Close();
+
+                return data;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         #endregion
 
 

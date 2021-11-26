@@ -1,5 +1,6 @@
 ﻿using BusinessLayer;
 using BusinessLayer.AppointmentBusiness;
+using Database.Models;
 using Patient_Manager.FormsHome;
 using System;
 using System.Collections.Generic;
@@ -76,6 +77,8 @@ namespace Patient_Manager.FormKeep
             {
                 KeepRepository.Instance.AppointmentIndex = Convert.ToInt32(DgvKeep.Rows[e.RowIndex].Cells[0].Value.ToString());
                 BtnDeselect.Visible = true;
+
+                Buttons();
             }
         }
 
@@ -153,6 +156,12 @@ namespace Patient_Manager.FormKeep
 
             BtnDeselect.Visible = false;
 
+            BtnCheck.Visible = false;
+
+            BtnConsult.Visible = false;
+
+            BtnSee.Visible = false;
+
             KeepRepository.Instance.AppointmentIndex = null;
         }
 
@@ -180,6 +189,36 @@ namespace Patient_Manager.FormKeep
         {
             FrmHome newForm = new FrmHome();
             newForm.Show();
+        }
+
+        public void Buttons()
+        {
+
+            DataAppointment appointment =_service.GetById((int)KeepRepository.Instance.AppointmentIndex);
+            switch (appointment.State)
+            {
+                case 1:
+                    BtnCheck.Visible = false;
+                    BtnConsult.Visible = true;
+                    BtnSee.Visible = false;
+                    break;
+                case 2:
+                    BtnCheck.Visible = true;
+                    BtnConsult.Visible = false;
+                    BtnSee.Visible = false;
+                    break;
+                case 3:
+                    BtnCheck.Visible = false;
+                    BtnConsult.Visible = false;
+                    BtnSee.Visible = true;
+                    break;
+                default:
+                    BtnCheck.Visible = false;
+                    BtnConsult.Visible = false;
+                    BtnSee.Visible = false;
+                    break;
+            }
+
         }
 
         #endregion        
