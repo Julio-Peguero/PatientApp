@@ -75,6 +75,11 @@ namespace Patient_Manager.FormsHome
             Appointment();
         }
 
+        private void BtnTestResult_Click(object sender, EventArgs e)
+        {
+            Result();
+        }
+
         #endregion
 
 
@@ -118,6 +123,13 @@ namespace Patient_Manager.FormsHome
         {
             this.Hide();
             FrmKeep newForm = new FrmKeep();
+            newForm.Show();
+        }
+
+        public void Result()
+        {
+            this.Hide();
+            FrmLabResults newForm = new FrmLabResults();
             newForm.Show();
         }
 

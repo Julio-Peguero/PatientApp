@@ -183,6 +183,7 @@ namespace Patient_Manager.FormsHome
             this.BtnTestResult.TabIndex = 5;
             this.BtnTestResult.Text = "Maintaining laboratory test results";
             this.BtnTestResult.UseVisualStyleBackColor = false;
+            this.BtnTestResult.Click += new System.EventHandler(this.BtnTestResult_Click);
             // 
             // panel1
             // 
