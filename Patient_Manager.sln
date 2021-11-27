@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLayer", "BusinessLa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database", "Database\Database.csproj", "{4F25C942-344B-4618-B8B2-0C7706AFF3AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailHandler", "EmailHandler\EmailHandler.csproj", "{9D55835D-DF9A-4C42-8AC6-8901574FBDE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailHandler", "EmailHandler\EmailHandler.csproj", "{9D55835D-DF9A-4C42-8AC6-8901574FBDE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

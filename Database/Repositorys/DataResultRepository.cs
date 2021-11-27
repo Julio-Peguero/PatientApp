@@ -115,7 +115,7 @@ namespace Database.Repositorys
         public DataTable GetResult(int id)
         {
             SqlDataAdapter query = new SqlDataAdapter();
-            SqlCommand command = new SqlCommand("SELECT r.Id as Code,T.Name,r.ResltTest FROM ResultLab r JOIN TestLab t ON r.IdLabTest = t.Id JOIN Patients p ON r.IdPatients = p.Id WHERE r.StateResult = 3 AND p.Id = @id", _connection);
+            SqlCommand command = new SqlCommand("SELECT r.Id as Code,T.Name as Test,r.ResltTest as Result,re.Status FROM ResultLab r JOIN TestLab t ON r.IdLabTest = t.Id JOIN ResultStatus re ON r.StateResult = re.Id WHERE r.StateResult = 2 AND r.IdKeep = @id", _connection);
 
             command.Parameters.AddWithValue("@id", id);
             query.SelectCommand = command;
