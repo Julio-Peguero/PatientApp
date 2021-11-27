@@ -66,7 +66,7 @@ namespace Patient_Manager.FormKeep
         {
             DataAppointment keep = _keep.GetById((int)KeepRepository.Instance.AppointmentIndex);
 
-            DgvLab.DataSource = _result.GetAllId(keep.IdPatient);
+            DgvLab.DataSource = _result.GetAllId(keep.Id);
         }
 
         public void CloseForm()

@@ -104,7 +104,7 @@ namespace Database.Repositorys
         public DataTable GetAllId(int id)
         {
             SqlDataAdapter query = new SqlDataAdapter();
-            SqlCommand command = new SqlCommand("SELECT r.Id as Code,t.Name as Test,s.Status FROM ResultLab r JOIN Patients p ON r.IdPatients = p.Id JOIN TestLab t ON r.IdLabTest = t.Id JOIN ResultStatus s ON r.StateResult = s.Id WHERE p.Id = @id", _connection);
+            SqlCommand command = new SqlCommand("SELECT r.Id as Code,t.Name as Test,s.Status FROM ResultLab r JOIN Patients p ON r.IdPatients = p.Id JOIN TestLab t ON r.IdLabTest = t.Id JOIN ResultStatus s ON r.StateResult = s.Id WHERE r.IdKeep = 1", _connection);
 
             command.Parameters.AddWithValue("@id", id);
             query.SelectCommand = command;

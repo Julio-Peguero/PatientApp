@@ -64,7 +64,7 @@ namespace Patient_Manager.FormResultTest
                 DataResult result = new DataResult()
                 {
                     Result = TxbResult.Text,
-                    IdStatus = 3,
+                    IdStatus = 2,
                     Id = MainRepository.Instance.ResultIndex.Value
                 };
 
