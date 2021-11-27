@@ -70,6 +70,7 @@ namespace Patient_Manager.FormKeep
             this.BtnBack.TabIndex = 8;
             this.BtnBack.Text = "Back";
             this.BtnBack.UseVisualStyleBackColor = false;
+            this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // DgvConsult
             // 
@@ -111,6 +112,8 @@ namespace Patient_Manager.FormKeep
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmSee";
             this.Text = "FrmSee";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmSee_FormClosed);
+            this.Load += new System.EventHandler(this.FrmSee_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvConsult)).EndInit();

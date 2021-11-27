@@ -96,7 +96,29 @@ namespace Database.Repositorys
 
         public DataTable GetAll()
         {
-            SqlDataAdapter query = new SqlDataAdapter("SELECT r.Id as Code,p.Name,p.LastName,p.Card,t.Name as Test FROM ResultLab r JOIN Patients p ON r.IdPatients = p.Id JOIN TestLab t ON r.IdLabTest = t.Id", _connection);
+            SqlDataAdapter query = new SqlDataAdapter("SELECT r.Id as Code,p.Name,p.LastName,p.Card,t.Name as Test,s.Status FROM ResultLab r JOIN Patients p ON r.IdPatients = p.Id JOIN TestLab t ON r.IdLabTest = t.Id JOIN ResultStatus s ON r.StateResult = s.Id WHERE s.Status = 'Pending'", _connection);
+
+            return LoadData(query);
+        }
+
+        public DataTable GetAllId(int id)
+        {
+            SqlDataAdapter query = new SqlDataAdapter();
+            SqlCommand command = new SqlCommand("SELECT r.Id as Code,t.Name as Test,s.Status FROM ResultLab r JOIN Patients p ON r.IdPatients = p.Id JOIN TestLab t ON r.IdLabTest = t.Id JOIN ResultStatus s ON r.StateResult = s.Id WHERE p.Id = @id", _connection);
+
+            command.Parameters.AddWithValue("@id", id);
+            query.SelectCommand = command;
+
+            return LoadData(query);
+        }
+
+        public DataTable GetResult(int id)
+        {
+            SqlDataAdapter query = new SqlDataAdapter();
+            SqlCommand command = new SqlCommand("SELECT r.Id as Code,T.Name,r.ResltTest FROM ResultLab r JOIN TestLab t ON r.IdLabTest = t.Id JOIN Patients p ON r.IdPatients = p.Id WHERE r.StateResult = 3 AND p.Id = @id", _connection);
+
+            command.Parameters.AddWithValue("@id", id);
+            query.SelectCommand = command;
 
             return LoadData(query);
         }

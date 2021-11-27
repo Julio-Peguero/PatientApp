@@ -33,6 +33,16 @@ namespace Database.Repositorys
             return ExecuteDml(command);
         }
 
+        public bool Edit(DataAppointment item)
+        {
+            SqlCommand command = new SqlCommand("UPDATE Keep set State=@state WHERE Id = @id", _connection);
+
+            command.Parameters.AddWithValue("@state", item.State);
+            command.Parameters.AddWithValue("@id", item.Id);
+
+            return ExecuteDml(command);
+        }
+
         public DataTable GetAllDoctor()
         {
             SqlDataAdapter query = new SqlDataAdapter("SELECT Id as Code,Name,LastName,Mail,Phone,Card FROM Doctors", _connection);

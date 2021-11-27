@@ -42,5 +42,15 @@ namespace BusinessLayer.ResultBusiness
             return repository.Search(card);
         }
 
+        public DataTable GetAllId(int id)
+        {
+            return repository.GetAllId(id);
+        }
+
+        public DataTable GetResult(int id)
+        {
+            return repository.GetResult(id);
+        }
+
     }
 }

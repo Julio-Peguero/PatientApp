@@ -25,6 +25,11 @@ namespace BusinessLayer.AppointmentBusiness
             return repository.Add(item);
         }
 
+        public bool Edit(DataAppointment item)
+        {
+            return repository.Edit(item);
+        }
+
         public DataTable GetAllDoctor()
         {
             return repository.GetAllDoctor();

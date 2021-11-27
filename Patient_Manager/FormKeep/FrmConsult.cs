@@ -122,9 +122,14 @@ namespace Patient_Manager.FormKeep
                     result.IdAppointment = keep.Id;
                     result.IdTestLab = id;
                     result.IdDoctor = keep.IdDoctor;
-                    result.IdStatus = 2;
+                    result.IdStatus = 1;
 
                     _result.Add(result);
+
+                    keep.Id = (int)KeepRepository.Instance.AppointmentIndex;
+                    keep.State = 2;
+
+                    _keep.Edit(keep);
                 }
             }
             else
