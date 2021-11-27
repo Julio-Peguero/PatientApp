@@ -60,6 +60,11 @@ namespace Patient_Manager.FormKeep
             Init();
         }
 
+        private void backToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Back();
+        }
+
         private void DgvDoctor_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -139,6 +144,6 @@ namespace Patient_Manager.FormKeep
             newForm.Show();
         }
 
-        #endregion   
+        #endregion
     }
 }

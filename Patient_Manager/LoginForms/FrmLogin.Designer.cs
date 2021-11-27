@@ -39,8 +39,6 @@ namespace Patient_Manager
             this.LblLoginPassword = new System.Windows.Forms.Label();
             this.TxbLoginNick = new System.Windows.Forms.TextBox();
             this.TxbLoginPassword = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PtbLogin)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -54,11 +52,9 @@ namespace Patient_Manager
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.20002F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.60335F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.19664F));
-            this.tableLayoutPanel1.Controls.Add(this.PtbLogin, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.PtbLogin, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -72,11 +68,12 @@ namespace Patient_Manager
             // PtbLogin
             // 
             this.PtbLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.tableLayoutPanel1.SetColumnSpan(this.PtbLogin, 3);
             this.PtbLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PtbLogin.Image = ((System.Drawing.Image)(resources.GetObject("PtbLogin.Image")));
-            this.PtbLogin.Location = new System.Drawing.Point(72, 3);
+            this.PtbLogin.Location = new System.Drawing.Point(3, 3);
             this.PtbLogin.Name = "PtbLogin";
-            this.PtbLogin.Size = new System.Drawing.Size(285, 153);
+            this.PtbLogin.Size = new System.Drawing.Size(425, 153);
             this.PtbLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PtbLogin.TabIndex = 0;
             this.PtbLogin.TabStop = false;
@@ -174,26 +171,6 @@ namespace Patient_Manager
             this.TxbLoginPassword.TabIndex = 3;
             this.TxbLoginPassword.UseSystemPasswordChar = true;
             // 
-            // panel1
-            // 
-            this.panel1.AutoSize = true;
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.panel1.Location = new System.Drawing.Point(363, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(65, 153);
-            this.panel1.TabIndex = 3;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(63, 153);
-            this.panel2.TabIndex = 4;
-            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -203,7 +180,6 @@ namespace Patient_Manager
             this.Name = "FrmLogin";
             this.Text = "Login";
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PtbLogin)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -223,8 +199,6 @@ namespace Patient_Manager
         private System.Windows.Forms.Label LblLoginPassword;
         private System.Windows.Forms.TextBox TxbLoginNick;
         private System.Windows.Forms.TextBox TxbLoginPassword;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
     }
 }
 

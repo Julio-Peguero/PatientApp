@@ -37,8 +37,6 @@ namespace Patient_Manager.FormLab
             this.LblName = new System.Windows.Forms.Label();
             this.TxbName = new System.Windows.Forms.TextBox();
             this.TblRegister = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.LblTittle = new System.Windows.Forms.Label();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -143,9 +141,7 @@ namespace Patient_Manager.FormLab
             this.TblRegister.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.20435F));
             this.TblRegister.Controls.Add(this.tableLayoutPanel4, 1, 1);
             this.TblRegister.Controls.Add(this.tableLayoutPanel5, 1, 2);
-            this.TblRegister.Controls.Add(this.panel1, 2, 0);
-            this.TblRegister.Controls.Add(this.panel2, 0, 0);
-            this.TblRegister.Controls.Add(this.LblTittle, 1, 0);
+            this.TblRegister.Controls.Add(this.LblTittle, 0, 0);
             this.TblRegister.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TblRegister.Location = new System.Drawing.Point(0, 0);
             this.TblRegister.Name = "TblRegister";
@@ -156,36 +152,19 @@ namespace Patient_Manager.FormLab
             this.TblRegister.Size = new System.Drawing.Size(441, 407);
             this.TblRegister.TabIndex = 5;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(416, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(22, 152);
-            this.panel1.TabIndex = 3;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(21, 152);
-            this.panel2.TabIndex = 4;
-            // 
             // LblTittle
             // 
             this.LblTittle.AutoSize = true;
             this.LblTittle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.TblRegister.SetColumnSpan(this.LblTittle, 3);
             this.LblTittle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LblTittle.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LblTittle.ForeColor = System.Drawing.Color.Honeydew;
             this.LblTittle.Image = ((System.Drawing.Image)(resources.GetObject("LblTittle.Image")));
             this.LblTittle.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.LblTittle.Location = new System.Drawing.Point(30, 0);
+            this.LblTittle.Location = new System.Drawing.Point(3, 0);
             this.LblTittle.Name = "LblTittle";
-            this.LblTittle.Size = new System.Drawing.Size(380, 158);
+            this.LblTittle.Size = new System.Drawing.Size(435, 158);
             this.LblTittle.TabIndex = 5;
             this.LblTittle.Text = "Test Name";
             this.LblTittle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -218,8 +197,6 @@ namespace Patient_Manager.FormLab
         private System.Windows.Forms.Label LblName;
         private System.Windows.Forms.TextBox TxbName;
         private System.Windows.Forms.TableLayoutPanel TblRegister;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label LblTittle;
     }
 }
