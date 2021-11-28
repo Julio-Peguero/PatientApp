@@ -70,7 +70,6 @@ namespace Patient_Manager.FormKeep
             this.DgvConsult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvConsult.GridColor = System.Drawing.Color.DarkGray;
             this.DgvConsult.Location = new System.Drawing.Point(29, 161);
-            this.DgvConsult.MultiSelect = false;
             this.DgvConsult.Name = "DgvConsult";
             this.DgvConsult.ReadOnly = true;
             this.DgvConsult.RowTemplate.Height = 25;

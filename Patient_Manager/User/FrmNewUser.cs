@@ -112,7 +112,7 @@ namespace Patient_Manager.User
                     else
                     {
                         _emailSender.SendEmail(users.Mail, "The user was added successfully",
-                            $"Your username is {users.UserName} and Password is {users.Password}");
+                            $"Your username is {users.UserName}");
 
                         service.Add(users);
 
