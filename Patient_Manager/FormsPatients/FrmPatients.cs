@@ -127,6 +127,7 @@ namespace Patient_Manager.FormsMedical
                     _service.Delete(MainRepository.Instance.PatientIndex.Value);
                     LoadData();
                     Deselect();
+                    MessageBox.Show("Patient has been deleted", "Notification");
                 }
                 else
                 {

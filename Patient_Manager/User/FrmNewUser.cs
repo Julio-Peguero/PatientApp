@@ -86,7 +86,7 @@ namespace Patient_Manager.User
             {
                 if (string.IsNullOrWhiteSpace(TxbName.Text) || string.IsNullOrWhiteSpace(TxbLastName.Text)
                 || string.IsNullOrWhiteSpace(TxbMail.Text) || string.IsNullOrWhiteSpace(TxbUser.Text)
-                || string.IsNullOrWhiteSpace(TxbPasswordC.Text) || string.IsNullOrWhiteSpace(TxbPassword.Text) || CxbType == null)
+                || string.IsNullOrWhiteSpace(TxbPasswordC.Text) || string.IsNullOrWhiteSpace(TxbPassword.Text) || CxbType.Text == "Select an option")
                 {
 
                     MessageBox.Show("You must complete all the data", "Warning");
@@ -140,12 +140,12 @@ namespace Patient_Manager.User
 
                 if (string.IsNullOrWhiteSpace(TxbName.Text) || string.IsNullOrWhiteSpace(TxbLastName.Text)
                 || string.IsNullOrWhiteSpace(TxbMail.Text) || string.IsNullOrWhiteSpace(TxbUser.Text)
-                || string.IsNullOrWhiteSpace(TxbPasswordC.Text) || string.IsNullOrWhiteSpace(TxbPassword.Text) || CxbType == null)
+                || string.IsNullOrWhiteSpace(TxbPasswordC.Text) || string.IsNullOrWhiteSpace(TxbPassword.Text) || CxbType.Text == "Select an option")
                 {
 
                     MessageBox.Show("You must complete all the data", "Warning");
                 }
-                else if (TxbPassword.Text != null && TxbPasswordC.Text != null && TxbPassword.Text == TxbPasswordC.Text)
+                else if (TxbPassword.Text != null && TxbPasswordC.Text != null && TxbPassword.Text == TxbPasswordC.Text && CxbType != null)
                 {
                     ComboBoxItem selectItem = CxbType.SelectedItem as ComboBoxItem;
 

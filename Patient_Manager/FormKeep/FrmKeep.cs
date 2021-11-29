@@ -140,12 +140,13 @@ namespace Patient_Manager.FormKeep
                     _service.Delete(KeepRepository.Instance.AppointmentIndex.Value);
                     LoadData();
                     Deselect();
+                    MessageBox.Show("Appointment has been deleted", "Notification");
                 }
                 else
                 {
                     LoadData();
                     Deselect();
-                    MessageBox.Show("Doctor has not been deleted", "Notification");
+                    MessageBox.Show("Appointment has not been deleted", "Notification");
                 }
             }
         }

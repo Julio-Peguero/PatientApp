@@ -74,7 +74,7 @@ namespace Patient_Manager
             this.PtbLogin.Location = new System.Drawing.Point(3, 3);
             this.PtbLogin.Name = "PtbLogin";
             this.PtbLogin.Size = new System.Drawing.Size(425, 153);
-            this.PtbLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PtbLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.PtbLogin.TabIndex = 0;
             this.PtbLogin.TabStop = false;
             // 

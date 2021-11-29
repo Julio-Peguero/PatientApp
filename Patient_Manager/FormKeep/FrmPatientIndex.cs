@@ -63,6 +63,8 @@ namespace Patient_Manager.FormKeep
                 KeepRepository.Instance.IdPatient = Convert.ToInt32(DgvPatients.Rows[e.RowIndex].Cells[0].Value.ToString());
 
                 BtnDeselect.Visible = true;
+
+                BtnNext.Visible = true;
             }
         }
 
@@ -121,6 +123,8 @@ namespace Patient_Manager.FormKeep
             DgvPatients.ClearSelection();
 
             BtnDeselect.Visible = false;
+
+            BtnNext.Visible = false;
 
             KeepRepository.Instance.IdPatient = null;
         }

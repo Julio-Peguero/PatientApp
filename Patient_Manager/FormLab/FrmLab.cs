@@ -159,6 +159,7 @@ namespace Patient_Manager.FormLab
                     service.Delete(MainRepository.Instance.LabIndex.Value);
                     LoadData();
                     Deselect();
+                    MessageBox.Show("Test Lab removed successfully", "Notification");
                 }
                 else
                 {

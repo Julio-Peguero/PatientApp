@@ -70,24 +70,23 @@ namespace Patient_Manager.FormsHome
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.78025F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.4442F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.77555F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.60164F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.79191F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.60645F));
             this.tableLayoutPanel2.Controls.Add(this.BtnUser, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.BtnMedical, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.BtnTestLab, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.BtnTestLab, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.BtnPatient, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.BtnKeep, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.BtnTestResult, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.BtnTestResult, 2, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(28, 156);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.81481F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.82813F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.09375F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.06734F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.8439F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.87492F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.13517F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.14602F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(591, 256);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
@@ -100,7 +99,7 @@ namespace Patient_Manager.FormsHome
             this.BtnUser.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnUser.Location = new System.Drawing.Point(3, 41);
             this.BtnUser.Name = "BtnUser";
-            this.BtnUser.Size = new System.Drawing.Size(146, 55);
+            this.BtnUser.Size = new System.Drawing.Size(180, 55);
             this.BtnUser.TabIndex = 0;
             this.BtnUser.Text = "User maintenance";
             this.BtnUser.UseVisualStyleBackColor = false;
@@ -113,9 +112,9 @@ namespace Patient_Manager.FormsHome
             this.BtnMedical.FlatAppearance.BorderSize = 0;
             this.BtnMedical.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMedical.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnMedical.Location = new System.Drawing.Point(441, 41);
+            this.BtnMedical.Location = new System.Drawing.Point(189, 41);
             this.BtnMedical.Name = "BtnMedical";
-            this.BtnMedical.Size = new System.Drawing.Size(147, 55);
+            this.BtnMedical.Size = new System.Drawing.Size(211, 55);
             this.BtnMedical.TabIndex = 1;
             this.BtnMedical.Text = "Medical maintenance";
             this.BtnMedical.UseVisualStyleBackColor = false;
@@ -128,9 +127,9 @@ namespace Patient_Manager.FormsHome
             this.BtnTestLab.FlatAppearance.BorderSize = 0;
             this.BtnTestLab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnTestLab.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnTestLab.Location = new System.Drawing.Point(155, 41);
+            this.BtnTestLab.Location = new System.Drawing.Point(406, 41);
             this.BtnTestLab.Name = "BtnTestLab";
-            this.BtnTestLab.Size = new System.Drawing.Size(280, 55);
+            this.BtnTestLab.Size = new System.Drawing.Size(182, 55);
             this.BtnTestLab.TabIndex = 2;
             this.BtnTestLab.Text = "Laboratory Test maintenance";
             this.BtnTestLab.UseVisualStyleBackColor = false;
@@ -145,7 +144,7 @@ namespace Patient_Manager.FormsHome
             this.BtnPatient.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnPatient.Location = new System.Drawing.Point(3, 102);
             this.BtnPatient.Name = "BtnPatient";
-            this.BtnPatient.Size = new System.Drawing.Size(146, 48);
+            this.BtnPatient.Size = new System.Drawing.Size(180, 48);
             this.BtnPatient.TabIndex = 3;
             this.BtnPatient.Text = "Patient maintenance";
             this.BtnPatient.UseVisualStyleBackColor = false;
@@ -158,9 +157,9 @@ namespace Patient_Manager.FormsHome
             this.BtnKeep.FlatAppearance.BorderSize = 0;
             this.BtnKeep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnKeep.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnKeep.Location = new System.Drawing.Point(441, 102);
+            this.BtnKeep.Location = new System.Drawing.Point(189, 102);
             this.BtnKeep.Name = "BtnKeep";
-            this.BtnKeep.Size = new System.Drawing.Size(147, 48);
+            this.BtnKeep.Size = new System.Drawing.Size(211, 48);
             this.BtnKeep.TabIndex = 4;
             this.BtnKeep.Text = "Keeping maintenance";
             this.BtnKeep.UseVisualStyleBackColor = false;
@@ -173,9 +172,9 @@ namespace Patient_Manager.FormsHome
             this.BtnTestResult.FlatAppearance.BorderSize = 0;
             this.BtnTestResult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnTestResult.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnTestResult.Location = new System.Drawing.Point(155, 102);
+            this.BtnTestResult.Location = new System.Drawing.Point(406, 102);
             this.BtnTestResult.Name = "BtnTestResult";
-            this.BtnTestResult.Size = new System.Drawing.Size(280, 48);
+            this.BtnTestResult.Size = new System.Drawing.Size(182, 48);
             this.BtnTestResult.TabIndex = 5;
             this.BtnTestResult.Text = "Maintaining laboratory test results";
             this.BtnTestResult.UseVisualStyleBackColor = false;
@@ -217,8 +216,10 @@ namespace Patient_Manager.FormsHome
             // 
             // singOffToolStripMenuItem
             // 
+            this.singOffToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.singOffToolStripMenuItem.ForeColor = System.Drawing.Color.Honeydew;
             this.singOffToolStripMenuItem.Name = "singOffToolStripMenuItem";
-            this.singOffToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.singOffToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.singOffToolStripMenuItem.Text = "Sing Off";
             this.singOffToolStripMenuItem.Click += new System.EventHandler(this.singOffToolStripMenuItem_Click);
             // 

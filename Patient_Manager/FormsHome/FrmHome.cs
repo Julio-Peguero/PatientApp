@@ -142,11 +142,11 @@ namespace Patient_Manager.FormsHome
         {
             if (MainRepository.Instance.UserType == 1)
             {
-                BtnKeep.Visible = true;
+                BtnKeep.Visible = false;
                 BtnMedical.Visible = true;
-                BtnPatient.Visible = true;
+                BtnPatient.Visible = false;
                 BtnTestLab.Visible = true;
-                BtnTestResult.Visible = true;
+                BtnTestResult.Visible = false;
                 BtnUser.Visible = true;
             }
             else if(MainRepository.Instance.UserType == 2)

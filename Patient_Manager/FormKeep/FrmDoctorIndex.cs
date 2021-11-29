@@ -72,6 +72,8 @@ namespace Patient_Manager.FormKeep
                 KeepRepository.Instance.IdDoctor = Convert.ToInt32(DgvDoctor.Rows[e.RowIndex].Cells[0].Value.ToString());
 
                 BtnDeselect.Visible = true;
+
+                BtnNext.Visible = true;
             }
         }
 
@@ -126,6 +128,8 @@ namespace Patient_Manager.FormKeep
             DgvDoctor.ClearSelection();
 
             BtnDeselect.Visible = false;
+
+            BtnNext.Visible = false;
 
             KeepRepository.Instance.IdDoctor = null;
         }
