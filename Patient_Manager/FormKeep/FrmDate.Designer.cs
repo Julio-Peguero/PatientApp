@@ -290,9 +290,10 @@ namespace Patient_Manager.FormKeep
             this.ClientSize = new System.Drawing.Size(486, 520);
             this.Controls.Add(this.TblRegister);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmDate";
-            this.Text = "FrmDate";
+            this.Text = "Date";
             this.Load += new System.EventHandler(this.FrmDate_Load);
             this.TblRegister.ResumeLayout(false);
             this.TblRegister.PerformLayout();

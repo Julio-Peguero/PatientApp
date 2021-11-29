@@ -29,6 +29,7 @@ namespace Patient_Manager.FormsMedical
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNewPatient));
             this.TblRegister = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.LblName = new System.Windows.Forms.Label();
@@ -449,6 +450,7 @@ namespace Patient_Manager.FormsMedical
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(486, 520);
             this.Controls.Add(this.TblRegister);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmNewPatient";
             this.Text = "Patient";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmNewPatient_FormClosed);

@@ -175,6 +175,7 @@ namespace Patient_Manager.FormLab
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(441, 407);
             this.Controls.Add(this.TblRegister);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmNewLab";
             this.Text = "Lab";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmNewLab_FormClosed);

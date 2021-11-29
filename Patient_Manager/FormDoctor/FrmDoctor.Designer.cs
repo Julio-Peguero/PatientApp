@@ -29,6 +29,7 @@ namespace Patient_Manager.FormDoctor
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDoctor));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.BtnEdit = new System.Windows.Forms.Button();
@@ -247,6 +248,7 @@ namespace Patient_Manager.FormDoctor
             this.ClientSize = new System.Drawing.Size(486, 520);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmDoctor";
             this.Text = "Doctor";

@@ -271,9 +271,10 @@ namespace Patient_Manager.FormKeep
             this.ClientSize = new System.Drawing.Size(486, 520);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmDoctorIndex";
-            this.Text = "FrmDoctor";
+            this.Text = "Doctor";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmDoctorIndex_FormClosed);
             this.Load += new System.EventHandler(this.FrmDoctorIndex_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

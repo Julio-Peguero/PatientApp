@@ -175,6 +175,7 @@ namespace Patient_Manager.FormResultTest
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(441, 407);
             this.Controls.Add(this.TblRegister);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmReport";
             this.Text = "Report";
             this.TblRegister.ResumeLayout(false);

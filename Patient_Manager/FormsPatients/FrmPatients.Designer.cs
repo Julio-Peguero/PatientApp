@@ -29,6 +29,7 @@ namespace Patient_Manager.FormsMedical
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPatients));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.BtnEdit = new System.Windows.Forms.Button();
@@ -227,7 +228,7 @@ namespace Patient_Manager.FormsMedical
             this.homeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.homeToolStripMenuItem.ForeColor = System.Drawing.Color.Honeydew;
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.homeToolStripMenuItem.Text = "Home";
             this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
@@ -236,7 +237,7 @@ namespace Patient_Manager.FormsMedical
             this.signOffToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.signOffToolStripMenuItem.ForeColor = System.Drawing.Color.Honeydew;
             this.signOffToolStripMenuItem.Name = "signOffToolStripMenuItem";
-            this.signOffToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.signOffToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.signOffToolStripMenuItem.Text = "Sign Off";
             this.signOffToolStripMenuItem.Click += new System.EventHandler(this.signOffToolStripMenuItem_Click);
             // 
@@ -247,6 +248,7 @@ namespace Patient_Manager.FormsMedical
             this.ClientSize = new System.Drawing.Size(486, 520);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmPatients";
             this.Text = "Patients";

@@ -29,6 +29,7 @@ namespace Patient_Manager.FormKeep
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsult));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.DgvConsult = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -165,8 +166,9 @@ namespace Patient_Manager.FormKeep
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(486, 520);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmConsult";
-            this.Text = "FrmConsult";
+            this.Text = "Consult";
             this.Load += new System.EventHandler(this.FrmConsult_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

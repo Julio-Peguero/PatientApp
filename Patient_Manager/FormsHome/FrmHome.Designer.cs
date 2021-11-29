@@ -219,7 +219,7 @@ namespace Patient_Manager.FormsHome
             this.singOffToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.singOffToolStripMenuItem.ForeColor = System.Drawing.Color.Honeydew;
             this.singOffToolStripMenuItem.Name = "singOffToolStripMenuItem";
-            this.singOffToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.singOffToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.singOffToolStripMenuItem.Text = "Sing Off";
             this.singOffToolStripMenuItem.Click += new System.EventHandler(this.singOffToolStripMenuItem_Click);
             // 
@@ -230,6 +230,7 @@ namespace Patient_Manager.FormsHome
             this.ClientSize = new System.Drawing.Size(644, 439);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmHome";
             this.Text = "Menu";

@@ -29,6 +29,7 @@ namespace Patient_Manager.FormKeep
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCheck));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.DgvLab = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -89,7 +90,7 @@ namespace Patient_Manager.FormKeep
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(426, 47);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
@@ -146,8 +147,9 @@ namespace Patient_Manager.FormKeep
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(486, 520);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCheck";
-            this.Text = "FrmCheck";
+            this.Text = "Check";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmCheck_FormClosed);
             this.Load += new System.EventHandler(this.FrmCheck_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

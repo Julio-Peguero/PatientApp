@@ -29,6 +29,7 @@ namespace Patient_Manager.User
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNewUser));
             this.TblRegister = new System.Windows.Forms.TableLayoutPanel();
             this.PtbPatients = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -319,6 +320,7 @@ namespace Patient_Manager.User
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(486, 520);
             this.Controls.Add(this.TblRegister);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmNewUser";
             this.Text = "User";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmNewUser_FormClosed);
